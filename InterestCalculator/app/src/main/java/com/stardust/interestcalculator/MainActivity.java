@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                     profit = profit*-1;
                     tvProfit.setText("You have lossed "+profit+" taka"+" and in percentage "+percentage+"%");
                 }
+                if (profit == 0){
+                    tvProfit.setText("You have not profited or lossed, in value 0 taka and in percentage 0%");
+                }
             }
         });
 
