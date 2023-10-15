@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/cardview_dark_background"
+    >
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="About Itachi Uchiha"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/itachi"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="Itachi had black hair, tied into a ponytail with long parted bangs. He wore a headband with a leaf symbol with a horizontal slash over it, signifying his “missing-nin” status, meaning that he had cut ties with his native village, the Hidden Leaf Village. Itachi was also often outfitted in a long black robe with white and red cloud patterns on it, signaling his allegiance to the Akatsuki, a terrorist organization. He rarely showed emotion but was prone to shows of force. Having been traumatized by witnessing a previous war, he was a pacifist and would often run from confrontation. He possessed the powerful Sharingan and was a ninja prodigy in his youth.
+Itachi is the brother of one of the main characters of Naruto, Sasuke. For much of the series’s duration, Itachi was reviled by fans for killing his and Sasuke’s entire clan, the Uchiha clan. It’s eventually revealed that Itachi didn’t murder his clan in cold blood. In fact, he was ordered to murder them by the leadership of his village to stop a coup d’etat, meaning that he acted in his village’s and Sasuke’s best interests the whole time. This was done to prevent another world war between the villages, which Itachi was afraid of. After killing his clan, he was allowed to spare his brother Sasuke, hoping that the hatred and trauma from the event would mold him into a strong ninja. Afterwards, he became part of the Akatsuki as a spy, making Itachi more prominent as an antagonist.
+In 2009, Itachi died in the anime after a climactic battle with Sasuke, wherein he gives Sasuke his Sharingan power. Having been wracked by guilt, Itachi had always known that the only way he could meet his end was by Sasuke’s hand. In fact, Itachi went so far as to make himself seem dastardly and evil, so that when Sasuke would go on to kill him, Sasuke would be seen as a hero.
+In the manga’s annual character popularity poll, Itachi ranked as high as 5th place out of 87 options, only losing out to the main characters and Gaara. As he’s a powerful ninja, he performs well in battle, making some of his fight scenes the best in the series as well. Due to the heinous actions he committed out of love for his brother and village, he is regarded as a very complex character, making him a fan favorite."
+            android:gravity="left"
+            />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

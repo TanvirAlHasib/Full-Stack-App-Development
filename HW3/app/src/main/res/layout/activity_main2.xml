@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+    android:padding="8dp"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About my personality"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In one word I am introvert, I don't like to talk with unknown person. It's make a feel that my energy going away from me but I love to stay not to talk with my close persons like my family and some friends but not too much. I love to stay in dark room.It's help me to regain energy. I also love to coding and making something realistic thing."
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skills"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="1. competitive programming\n2. C, Python, a little bit Java, Xml, Html\n3. A little bit Cyber Security\n4. App Development\n5. Web Development"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Project"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="I have one project that is a Islamic app that I have made to test my skill. The app link: https://l.facebook.com/l.php?u=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.stardust.islam%26fbclid%3DIwAR1kZSx9OxjIt7vk0jCWyHYB7eeqmPt476V7a9V6XRKvyFlfEbc8nthYjrkh=AT2REuu4oOaS9IAztIQAjOUdy4-TXT0zUbP3A1wMkMLbuL-bH2yYRQICQkK10YugQXKW4XSuaE2x23yXuo7GYDvUHFF3QEFhPdymLOkELdqFOYnz6OASvZ4IftR2LvILA5ZzAg"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="5dp"
+    android:background="#ffffff"
+    >
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/place_holder"
+        android:scaleType="centerCrop"
+        />
+    <Button
+        android:id="@+id/button_for_anim"
+        android:layout_below="@id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TAP ME FOR ANIM"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/button_for_picasso"
+        android:visibility="gone"
+        >
+    <ImageView
+        android:id="@+id/image_for_picasso"
+        android:layout_below="@id/button_for_anim"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <Button
+                android:id="@+id/back"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BACK"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+            <Button
+                android:id="@+id/main_page"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MAIN PAGE"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/button_for_picasso"
+            android:layout_below="@id/button_for_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TAP ME FOR PICASSO"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+
+</RelativeLayout>

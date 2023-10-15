@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+    android:padding="8dp"
+    >
+
+<!--    it's a comment, we can make it by pressing ctrl+/ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="If you want to know me then just tap the butto."
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="200dp"
+                />
+            <Button
+                android:id="@+id/tapme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="150dp"
+                android:backgroundTint="#2B2727"
+                android:text="Tap me "
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/hasib"
+                    />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:text="Name : S.M. Johaer Tanvir Al-Hasib\nFather name : S.M. Osman Goni\nMother name : S.M. Jesmin Akhter\nMobile Number : 01521746069\nReligion : Islam\nGender : Male\nDate of Birth : 07-12-2002\nRelation Status : Single\nPrimary : Peara Primary School\nHigh School : 'Amena-Baki Reasidential Model School and College'\nCollege : Police Lines School College\nUniversity : pending  "
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+                    <Button
+                        android:id="@+id/back"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="back"
+                        android:textColor="#ffffff"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:backgroundTint="#2B2727"
+                        android:layout_weight="1"
+                        />
+                    <Button
+                        android:id="@+id/More"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="more"
+                        android:textColor="#ffffff"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:backgroundTint="#2B2727"
+                        android:layout_weight="1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

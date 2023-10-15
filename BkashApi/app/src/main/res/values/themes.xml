@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BkashApi" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/darkPink</item>
+        <item name="colorPrimaryVariant">@color/darkPink</item>
+    </style>
+
+    <style name="Theme.BkashApi" parent="Base.Theme.BkashApi" />
+</resources>

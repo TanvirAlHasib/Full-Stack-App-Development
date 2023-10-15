@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#ffffff"
+    >
+    <LinearLayout
+        android:id="@+id/balanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="#FF0090"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/profile"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="10dp"
+                android:text="Tanvir Al Hasib"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:background="@drawable/roundbak"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                >
+               <ImageView
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:layout_gravity="center"
+                   android:src="@drawable/taka_icon"
+                   android:background="@drawable/circaleshape"
+                   android:layout_marginLeft="6dp"
+                   />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ব্যালেন্স দেখুন"
+                    android:textColor="#FF0090"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/bkash"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/bkash"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="4dp"
+                />
+
+            <ImageView
+                android:id="@+id/bkashreward"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/bkashreward"
+                android:layout_toLeftOf="@id/bkash"
+                android:layout_marginRight="15dp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section2"
+        android:layout_below="@id/balanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="9dp"
+        android:weightSum="4"
+        android:padding="6dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/send_money"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="সেন্ড মানি"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/mobile_recharge"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="মোবাইল রিচার্জ"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/cash_out"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="ক্যাশ আউট"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/payment"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="পেমেন্ট"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section3"
+        android:layout_below="@id/section2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="9dp"
+        android:weightSum="4"
+        android:padding="6dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/add_money"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="অ্যাড মানি"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/paybill"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="পে বিল"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/saving"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="সেভিংন্স"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/loan"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="লোন"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/section4"
+        android:layout_below="@id/section3"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:src="@drawable/more"
+        />
+    <TextView
+        android:id="@+id/middletext1"
+        android:layout_below="@id/section4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="আমার বিকাশ"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="14dp"
+        />
+
+    <TextView
+        android:id="@+id/middletext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="340dp"
+        android:text="সব দেখুন"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:layout_marginRight="14dp"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/section5"
+        android:layout_below="@id/middletext1"
+        android:layout_width="343dp"
+        android:layout_height="82dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="2dp"
+        android:layout_marginTop="8dp"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:src="@drawable/giftcard"
+            android:padding="7dp"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="My Offers"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#000000"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/phonebook"
+                android:padding="8dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="Priyo Numbers"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/paybill"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="Saved Bills"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:src="@drawable/send_money"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="Tanmoy"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/section6"
+        android:layout_below="@id/section5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/add"
+        android:scaleType="centerCrop"
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/bottomtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/section6"
+        android:textSize="13sp"
+        android:textColor="#000000"
+        android:text="সাজেশন"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="14dp"
+        />
+
+    <TextView
+        android:id="@+id/bottomtext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="566dp"
+        android:textColor="#000000"
+        android:text="সব দেখুন"
+        android:layout_marginRight="14dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/section7"
+        android:layout_below="@id/bottomtext"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="15dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/bdjobs"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="বিডিজবস"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/quiz"
+                android:padding="8dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="কুইজগিরি"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/gamestar"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="গেমস্টার"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/daraz"
+                android:padding="4dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="দারাজ"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/champ"
+                android:padding="4dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="কুইজ চ্যাম্প"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/section7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="#FF0090"
+        android:padding="8dp"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/home"
+                android:padding="5dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="হোম"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/qr"
+                android:padding="5dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="QR স্ক্যান"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/inbox"
+                android:padding="5dp"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="ইনবক্স"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
