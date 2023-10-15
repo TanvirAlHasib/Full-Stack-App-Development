@@ -2,6 +2,7 @@ package com.stardust.interestcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edPercentage,edBuy,edSell,edMainPrice;
     Button bCalculate1, bCalculate2;
-    TextView tvSellPrice,tvProfit;
+    TextView tvSellPrice,tvProfit,privacy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
         bCalculate2 = findViewById(R.id.bCalculate2);
         tvSellPrice = findViewById(R.id.tvSellPrice);
         tvProfit = findViewById(R.id.tvProfit);
+        privacy = findViewById(R.id.privacy);
+
+
+        // for privacy webview
+
+        privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Webview.class);
+                startActivity(intent);
+            }
+        });
 
         // how much profit user want section
 
