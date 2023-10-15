@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 if (profit<0){
                     float percentage = (profit/buy)*100;
                     profit = profit*-1;
-                    tvProfit.setText("You have lossed "+profit+" taka"+" and in percentage "+percentage);
+                    tvProfit.setText("You have lossed "+profit+" taka"+" and in percentage "+percentage+"%");
                 }
             }
         });

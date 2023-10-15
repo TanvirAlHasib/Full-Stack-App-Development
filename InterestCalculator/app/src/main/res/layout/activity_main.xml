@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:textSize="22sp"
-                    android:hint="Your desire profit in percentage"
+                    android:hint="Your desire profit in percentage\njust digit"
                     android:textColor="@color/black"
                     android:gravity="center"
                     android:inputType="numberDecimal"
