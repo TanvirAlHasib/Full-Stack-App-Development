@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         tvSellPrice = findViewById(R.id.tvSellPrice);
         tvProfit = findViewById(R.id.tvProfit);
 
-        // how much profit user want
+        // how much profit user want section
 
         bCalculate1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +39,26 @@ public class MainActivity extends AppCompatActivity {
                 float desire_percentage = Float.parseFloat(edPercentage.getText().toString());
                 float sell_price = ((desire_percentage*main_price)/100)+main_price;
                 tvSellPrice.setText("You have to sell "+sell_price+" or above this price.");
+            }
+        });
+
+        // profit or loss section
+
+        bCalculate2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float buy = Float.parseFloat(edBuy.getText().toString());
+                float sell = Float.parseFloat((edSell.getText().toString()));
+                float profit = sell - buy;
+                if (profit>0){
+                    float percentage = (profit/buy)*100;
+                    tvProfit.setText("You have profited "+profit+" taka"+" and in percentage "+percentage);
+                }
+                if (profit<0){
+                    float percentage = (profit/buy)*100;
+                    profit = profit*-1;
+                    tvProfit.setText("You have lossed "+profit+" taka"+" and in percentage "+percentage);
+                }
             }
         });
 
