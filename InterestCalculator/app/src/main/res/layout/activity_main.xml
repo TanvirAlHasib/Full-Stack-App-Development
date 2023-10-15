@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy Policy"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@color/Day_blue"
+                    />
+
+                <TextView
+                    android:id="@+id/profitwantQuestion"
+                    android:layout_below="@id/privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="How much profit do you want in your sell ?"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    />
+
+
+                <EditText
+                    android:id="@+id/edPercentage"
+                    android:layout_below="@id/profitwantQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textSize="22sp"
+                    android:hint="Your desire profit in percentage"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <Button
+                    android:layout_below="@id/edPercentage"
+                    android:id="@+id/bCalculate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate Selling price"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="25dp"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/Day_blue"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSellPrice"
+                    android:layout_below="@id/bCalculate1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/ActualProfit"
+                    android:layout_below="@id/tvSellPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Day_blue"
+                    android:layout_marginTop="50dp"
+                    android:textSize="20sp"
+                    android:text="Have you sell then calculate how much you have profited..."
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/line"
+                    android:layout_below="@id/ActualProfit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--------------------------------------------------------------"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <TextView
+                    android:id="@+id/bPriceQ"
+                    android:layout_below="@id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Your buying price ?"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edBuy"
+                    android:layout_below="@id/bPriceQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="price"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/sPriceQ"
+                    android:layout_below="@id/edBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Your selling price ?"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edSell"
+                    android:layout_below="@id/sPriceQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="price"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <Button
+                    android:layout_below="@id/edSell"
+                    android:id="@+id/bCalculate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate Selling price"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="25dp"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/Day_blue"
+                    />
+
+                <TextView
+                    android:id="@+id/tvProfit"
+                    android:layout_below="@id/bCalculate2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
