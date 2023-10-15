@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 float profit = sell - buy;
                 if (profit>0){
                     float percentage = (profit/buy)*100;
-                    tvProfit.setText("You have profited "+profit+" taka"+" and in percentage "+percentage);
+                    tvProfit.setText("You have profited "+profit+" taka"+" and in percentage "+percentage+"%");
                 }
                 if (profit<0){
                     float percentage = (profit/buy)*100;
