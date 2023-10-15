@@ -125,6 +125,7 @@
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"
+                    android:padding="8dp"
                     />
 
                 <TextView
@@ -210,7 +211,7 @@
                     android:textColor="@color/black"
                     android:gravity="center"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="20dp"
                     />
 
 
