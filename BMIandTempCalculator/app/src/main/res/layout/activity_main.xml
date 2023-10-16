@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="calculate your BMI"
-                    android:textSize="25sp"
+                    android:textSize="28sp"
                     android:textColor="@color/black"
                     android:gravity="center"
                     android:background="@color/Teal"
@@ -76,6 +76,7 @@
                     android:hint="Kg"
                     android:gravity="center"
                     android:layout_marginBottom="15dp"
+                    android:inputType="numberDecimal"
                     />
 
                 <TextView
@@ -111,6 +112,7 @@
                         android:textColor="@color/black"
                         android:hint="ft"
                         android:gravity="center"
+                        android:inputType="numberDecimal"
                         />
 
                     <EditText
@@ -122,6 +124,7 @@
                         android:textColor="@color/black"
                         android:hint="inch"
                         android:gravity="center"
+                        android:inputType="numberDecimal"
                         />
 
                 </LinearLayout>
@@ -134,8 +137,168 @@
                     android:layout_centerHorizontal="true"
                     android:text="Calculate BMI"
                     android:textSize="22sp"
-                    android:layout_marginBottom="23dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="13dp"
                     android:backgroundTint="@color/Teal"
+                    />
+
+                <TextView
+                    android:id="@+id/tvBMI"
+                    android:layout_below="@id/BMI_calculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginBottom="30dp"
+                    />
+
+                <TextView
+                    android:id="@+id/headingTemp"
+                    android:layout_below="@id/tvBMI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature Conversion"
+                    android:textSize="28sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:background="@color/Teal"
+                    android:padding="10dp"
+                    android:layout_marginBottom="35dp"
+                    />
+
+                <TextView
+                    android:id="@+id/HeadingcelsiusTofahrenheit"
+                    android:layout_below="@id/headingTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Celsius to Fahrenheit "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="@color/Teal"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <TextView
+                    android:id="@+id/celsiusTofahrenheitQ"
+                    android:layout_below="@id/HeadingcelsiusTofahrenheit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Celsius count"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edCelsius"
+                    android:layout_below="@id/celsiusTofahrenheitQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:hint="celsius"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    />
+
+                <Button
+                    android:id="@+id/fahCalculate"
+                    android:layout_below="@id/edCelsius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="Calculate"
+                    android:textSize="22sp"
+                    android:padding="13dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvFah"
+                    android:layout_below="@id/fahCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/HeadingFahrenheitToKelvin"
+                    android:layout_below="@id/tvFah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fahrenheit to Kelvin"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="@color/Teal"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <TextView
+                    android:id="@+id/fahrenheitToKelvinQ"
+                    android:layout_below="@id/HeadingFahrenheitToKelvin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Fahrenhiet count"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edFahrenheit"
+                    android:layout_below="@id/fahrenheitToKelvinQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:hint="Fahrenheit"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    />
+
+                <Button
+                    android:id="@+id/kelvinCalculate"
+                    android:layout_below="@id/edFahrenheit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="Calculate"
+                    android:textSize="22sp"
+                    android:padding="13dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvKel"
+                    android:layout_below="@id/kelvinCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"
                     />
 
 
