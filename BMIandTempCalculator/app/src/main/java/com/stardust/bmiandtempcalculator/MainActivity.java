@@ -45,9 +45,31 @@ public class MainActivity extends AppCompatActivity {
 
                 double heightmeter = (0.3048*heightft) + (0.0254*heightinch);
 
-                // calculation
+                // BMI
 
-                tvBMI.setText("Your BMI is "+(weight/(heightmeter*heightmeter)));
+                double BMI = (weight/(heightmeter*heightmeter));
+
+                // comdition
+
+                if ( BMI <= 18.5){
+
+                    tvBMI.setText("Your BMI is "+BMI+"\nYou are Underweight, you should eat properly");
+                }
+
+                if ((BMI > 18.5) && (BMI <= 24.9) ){
+
+                    tvBMI.setText("Your BMI is "+BMI+"\nYou have Normal weight, you should eat as you eat everyday");
+                }
+
+                if ((BMI >= 25) && (BMI<=29.9)){
+
+                    tvBMI.setText("Your BMI is "+BMI+"\nYou are Overweight, you should eat less and exercise");
+                }
+
+                if (BMI >= 30){
+
+                    tvBMI.setText("Your BMI is "+BMI+"\nYou are Overweight, you should eat less and exercise more");
+                }
             }
         });
 
