@@ -73,5 +73,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // start temp convertion section here
+
+        fahCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // celsius to fahrenheit
+
+                float celsius = Float.parseFloat(edCelsius.getText().toString());
+                float fahrenhiet = ((celsius*9)/5)+32;
+                tvFah.setText("Temperature in Fahrenhiet is "+fahrenhiet+"°");
+            }
+        });
+
+        kelvinCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // fahrenhiet to kelvin calculation
+
+                float fahrenhiet = Float.parseFloat(edFahrenheit.getText().toString());
+                double kelvin = (((fahrenhiet-32)*5)/9)+273.15;
+                tvKel.setText("Temperature in Kelvin is "+kelvin+"°");
+            }
+        });
+
     }
 }
