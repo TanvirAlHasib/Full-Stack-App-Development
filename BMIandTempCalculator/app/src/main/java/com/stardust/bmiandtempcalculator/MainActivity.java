@@ -3,6 +3,7 @@ package com.stardust.bmiandtempcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +31,25 @@ public class MainActivity extends AppCompatActivity {
         BMI_calculate = findViewById(R.id.BMI_calculate);
         fahCalculate = findViewById(R.id.fahCalculate);
         kelvinCalculate = findViewById(R.id.kelvinCalculate);
+
+        // for bmi calculation
+
+        BMI_calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float weight = Float.parseFloat(edWeight.getText().toString());
+                float heightft = Float.parseFloat(edHeightFt.getText().toString());
+                float heightinch = Float.parseFloat(edHeightInch.getText().toString());
+
+                // height in meter convertion
+
+                double heightmeter = (0.3048*heightft) + (0.0254*heightinch);
+
+                // calculation
+
+                tvBMI.setText("Your BMI is "+(weight/(heightmeter*heightmeter)));
+            }
+        });
 
     }
 }
