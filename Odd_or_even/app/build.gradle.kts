@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.stardust.odd_or_even"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.stardust.odd_or_even"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
