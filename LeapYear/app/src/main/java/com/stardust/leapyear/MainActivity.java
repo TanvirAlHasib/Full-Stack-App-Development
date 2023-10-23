@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if ((edYaer.getText().toString().length()) > 0){
                     double year = Double.parseDouble(edYaer.getText().toString());
-                    if (((year%4 == 0) && (year%100 != 0)) || (year % 400 == 0)){
+                    if (year == 0){
+                       tvDisplay.setText("0 is exceptional");
+                    } else if (((year%4 == 0) && (year%100 != 0)) || (year % 400 == 0)){
                         tvDisplay.setText(year+" is leap year");
                     }else {
                         tvDisplay.setText(year+" is not leap year");
