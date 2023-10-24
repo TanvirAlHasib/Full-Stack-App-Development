@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.stardust.grade_calculator"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.stardust.grade_calculator"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
