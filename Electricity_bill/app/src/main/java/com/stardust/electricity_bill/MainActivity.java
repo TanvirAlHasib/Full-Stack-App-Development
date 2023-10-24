@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         totall_bill = totall_bill + (totall_bill*0.2);
                         tvDisplay.setText("Total bill in BDT "+totall_bill);
                     } else {
-                        double totall_bill = units*1.20;
+                        double totall_bill = units*1.50;
                         totall_bill = (totall_bill*0.2)+totall_bill;
                         tvDisplay.setText("Total bill in BDT "+totall_bill);
                     }
