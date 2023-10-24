@@ -14,7 +14,70 @@
         android:layout_height="wrap_content"
         >
 
+        <TextView
+            android:id="@+id/privacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy Statement"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:background="@color/Raspberry"
+            android:layout_marginBottom="30dp"
+            />
 
+        <TextView
+            android:id="@+id/question"
+            android:layout_below="@id/privacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter total consumed units..."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/edUnits"
+            android:layout_below="@id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Units"
+            android:textSize="23sp"
+            android:gravity="center"
+            android:inputType="number"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:id="@+id/tvDisplay"
+            android:layout_below="@id/edUnits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Button
+            android:id="@+id/bCalculate"
+            android:layout_below="@id/tvDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:backgroundTint="@color/Raspberry"
+            android:layout_centerHorizontal="true"
+            />
 
     </RelativeLayout>
 
