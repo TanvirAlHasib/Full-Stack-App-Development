@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.stardust.week_day"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.stardust.week_day"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
