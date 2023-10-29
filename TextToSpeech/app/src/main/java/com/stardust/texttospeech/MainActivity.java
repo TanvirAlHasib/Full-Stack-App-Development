@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         bTap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
