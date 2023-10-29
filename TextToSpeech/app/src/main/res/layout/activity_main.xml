@@ -67,18 +67,41 @@
                     android:textStyle="italic"
                     />
 
-                <Button
-                    android:id="@+id/bTap"
+                <LinearLayout
                     android:layout_below="@id/edText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tap Me"
-                    android:textStyle="bold"
-                    android:textSize="23sp"
-                    android:textColor="@color/black"
-                    android:backgroundTint="@color/CherryRed"
-                    android:layout_centerHorizontal="true"
-                    />
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+
+                    <Button
+                        android:id="@+id/bTap"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Tap Me"
+                        android:textStyle="bold"
+                        android:textSize="23sp"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/CherryRed"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <Button
+                        android:id="@+id/bReset"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Reset"
+                        android:textStyle="bold"
+                        android:textSize="23sp"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/CherryRed"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                </LinearLayout>
 
 
             </RelativeLayout>
