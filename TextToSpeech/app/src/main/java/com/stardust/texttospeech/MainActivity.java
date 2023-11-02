@@ -1,7 +1,9 @@
 package com.stardust.texttospeech;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -115,5 +117,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
+    // onBackPress method
+
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setIcon(R.drawable.exit_alert)
+                .setTitle("Exit!!")
+                .setMessage("Do you really want to exit ?")
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "Thank you for your feedback", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+
+    }
+
 
 }
