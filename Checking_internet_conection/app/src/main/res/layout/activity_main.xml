@@ -7,9 +7,93 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:padding="3dp"
+    android:background="@color/white"
     >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy Statement"
+                    android:textSize="35sp"
+                    android:textColor="@color/black"
+                    android:background="@color/Alice_blue"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="30dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/Madara_pic"
+                    android:layout_below="@id/privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/madara"
+                    android:scaleType="centerCrop"
+                    android:layout_marginBottom="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/about"
+                    android:layout_below="@id/Madara_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Know about Madara Ucchiha"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:padding="5dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/madaraDetails"
+                    android:layout_below="@id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Madara Uchiha (Japanese: うちは マダラ, Hepburn: Uchiha Madara) is a main antagonist manga and anime character in the Naruto series created by Masashi Kishimoto. He appears for the first time in Part II of the manga and the Shippuden anime adaptation, as a major antagonist. He, along with its first Hokage Hashirama Senju, is one of the co-founders of Konohagakure (Japanese: 木ノ葉隠れの里, Hepburn: Konohagakure no Sato) village from the ninja world. Their power conflict over how to run the village, as well as the long-term feud between clans, leads to Madara's death. However, it is revealed later that Madara had used a man named Obito Uchiha as his agent. He transplants his Rinnegan (輪廻眼, lit. Saṃsāra Eye) eye power into a child named Nagato, a member of the terrorist organization Akatsuki, to be preserved for his eventual revival years later. During most of the series, Obito uses Madara's name until a criminal named Kabuto Yakushi reanimates the real Madara who becomes one of the primary antagonists alongside Obito Uchiha during the Fourth Great Shinobi World War storyline. Madara has appeared in several pieces of Naruto media, including a Boruto feature film. Many Naruto video games have featured him as a playable character.Kishimoto created the character to provide a strong villain in the series' final arc who would face the series' protagonist, Naruto Uzumaki. This confrontation would be different from that with previous enemies and result in more of a focus on fight scenes. Merchandise has been released in Madara's likeness, including keychains, plush dolls, and figurines. In the Japanese anime, Naoya Uchida voices Madara, while Go Inoue voices him as a child. In the English version, Neil Kaplan provides Madara's voice with Xander Mobus voicing him as a child. Critics have commented on his role as an antagonist in the series; some have placed him on top all-time anime villains lists, while others have criticized his effectiveness. Nevertheless, Madara's background was well-received for how integral his story is to the series' scenario."
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <Button
+                    android:layout_below="@id/madaraDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="know more.."
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:backgroundTint="@color/Alice_blue"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="1dp"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
