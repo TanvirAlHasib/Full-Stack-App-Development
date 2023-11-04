@@ -76,6 +76,7 @@
                     />
 
                 <Button
+                    android:id="@+id/bMadara"
                     android:layout_below="@id/madaraDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -16,17 +16,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button madaraDetails;
-    TextToSpeech textToSpeech;
+    Button bMadara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        madaraDetails = findViewById(R.id.madaraDetails);
+        bMadara = findViewById(R.id.bMadara);
 
-        madaraDetails.setOnClickListener(new View.OnClickListener() {
+        bMadara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 if ((networkInfo != null) && (networkInfo.isAvailable())){
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(R.drawable.exit_alert)
-                            .setMessage("This page is under development and \nIt will never finished :)")
+                            .setMessage("This page is under development and It will never finished :)")
                             .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
