@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 if ((networkInfo != null) && (networkInfo.isAvailable())){
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(R.drawable.exit_alert)
-                            .setMessage("This page is under development and It will never finished :)")
+                            .setTitle("Error!!")
+                            .setMessage("This page is under development and \nIt will never finished :)")
                             .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -44,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(R.drawable.exit_alert)
+                            .setTitle("Error!!")
                             .setMessage("You are offline")
-                            .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                            .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Toast.makeText(MainActivity.this, "make your device online", Toast.LENGTH_SHORT).show();
+                                    dialog.dismiss();
                                 }
                             }).show();
                 }
