@@ -2,6 +2,8 @@ package com.stardust.offline_in_app_audio_player;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -296,6 +298,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setIcon(R.drawable.music_icon)
+                .setTitle("Exit!!")
+                .setMessage("Do you really want to exit ?")
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).show();
 
     }
 }
