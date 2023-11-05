@@ -239,6 +239,72 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/forthdMusic"
+            android:layout_below="@id/thirdMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bottom_shade"
+            android:padding="2dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/music_icon"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I ran so far away"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flock of Seagulls"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="145dp"
+                    android:layout_height="wrap_content"
+                    android:text="Online"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/play_icon4"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:src="@drawable/play_icon"
+                android:layout_marginLeft="10dp"
+                android:tag="Not_playing3"
+                />
+
+            <ImageView
+                android:id="@+id/pause4"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:src="@drawable/pause_icon"
+                android:tag="Not_pause3"
+                />
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 
