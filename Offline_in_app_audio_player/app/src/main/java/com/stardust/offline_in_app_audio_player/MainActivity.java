@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView play_icon1, play_icon2, play_icon3,pause1, pause2, pause3;
+    ImageView play_icon1, play_icon2, play_icon3, play_icon4, pause1, pause2, pause3, pause4;
     MediaPlayer mediaPlayer;
 
     String music = "music1";
@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
         play_icon1 = findViewById(R.id.play_icon1);
         play_icon2 = findViewById(R.id.play_icon2);
         play_icon3 = findViewById(R.id.play_icon3);
+        play_icon4 = findViewById(R.id.play_icon4);
         pause1 = findViewById(R.id.pause1);
         pause2 = findViewById(R.id.pause2);
         pause3 = findViewById(R.id.pause3);
+        pause4 = findViewById(R.id.pause4);
 
 
 
