@@ -93,7 +93,7 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/play_icon"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="10dp"
                 android:tag="Not_playing"
                 />
 
@@ -102,7 +102,6 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/pause_icon"
-                android:layout_marginLeft="10dp"
                 android:tag="Not_pause"
                 />
 
@@ -160,8 +159,8 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/play_icon"
-                android:layout_marginLeft="15dp"
-                android:tag="Not_playing"
+                android:layout_marginLeft="10dp"
+                android:tag="Not_playing2"
                 />
 
             <ImageView
@@ -169,8 +168,7 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/pause_icon"
-                android:layout_marginLeft="10dp"
-                android:tag="Not_pause"
+                android:tag="Not_pause2"
                 />
 
         </LinearLayout>
@@ -227,8 +225,8 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/play_icon"
-                android:layout_marginLeft="15dp"
-                android:tag="Not_playing"
+                android:layout_marginLeft="10dp"
+                android:tag="Not_playing3"
                 />
 
             <ImageView
@@ -236,8 +234,7 @@
                 android:layout_width="70dp"
                 android:layout_height="80dp"
                 android:src="@drawable/pause_icon"
-                android:layout_marginLeft="10dp"
-                android:tag="Not_pause"
+                android:tag="Not_pause3"
                 />
 
         </LinearLayout>
