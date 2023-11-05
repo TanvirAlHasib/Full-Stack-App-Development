@@ -3,13 +3,19 @@ package com.stardust.offline_in_app_audio_player;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon1.setImageResource(R.drawable.stop);
                         play_icon2.setImageResource(R.drawable.play_icon);
                         play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
                         mediaPlayer.start();
                         play_icon1.setTag("Stopped");
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon1.setImageResource(R.drawable.stop);
                         play_icon2.setImageResource(R.drawable.play_icon);
                         play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
                         mediaPlayer.start();
                         play_icon1.setTag("Stopped");
@@ -165,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon2.setImageResource(R.drawable.stop);
                         play_icon1.setImageResource(R.drawable.play_icon);
                         play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sunny_fruit_beat_blitz);
                         mediaPlayer.start();
 
@@ -181,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon2.setImageResource(R.drawable.stop);
                         play_icon1.setImageResource(R.drawable.play_icon);
                         play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sunny_fruit_beat_blitz);
                         mediaPlayer.start();
 
@@ -253,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon3.setImageResource(R.drawable.stop);
                         play_icon1.setImageResource(R.drawable.play_icon);
                         play_icon2.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.canon_lay_up);
                         mediaPlayer.start();
 
@@ -269,6 +280,7 @@ public class MainActivity extends AppCompatActivity {
                         play_icon3.setImageResource(R.drawable.stop);
                         play_icon1.setImageResource(R.drawable.play_icon);
                         play_icon2.setImageResource(R.drawable.play_icon);
+                        play_icon4.setImageResource(R.drawable.play_icon);
                         mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.canon_lay_up);
                         mediaPlayer.start();
 
@@ -293,6 +305,125 @@ public class MainActivity extends AppCompatActivity {
                     play_icon3.setTag("Resumed3");
                     play_icon3.setImageResource(R.drawable.play_icon);
                     music = "music3";
+                    Toast.makeText(MainActivity.this, "music has paused", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(MainActivity.this, "music is not playing", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        // 4th online song section
+
+
+        music = "music4";
+        play_icon4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (music.contains("music4")){
+
+                    if (play_icon4.getTag().toString().contains("Not_playing4")){
+
+                        mediaPlayer = new MediaPlayer();
+                        try {
+                            mediaPlayer.setDataSource(MainActivity.this, Uri.parse("https://www.ee.columbia.edu/~dpwe/sounds/music/dont_speak-no_doubt.wav"));
+                            mediaPlayer.prepare();
+                            mediaPlayer.start();
+                            play_icon4.setTag("Stopped4");
+                            play_icon4.setImageResource(R.drawable.stop);
+                            Toast.makeText(MainActivity.this, "please wait, music is loading", Toast.LENGTH_LONG).show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon4.setTag("Not_playing4");
+                                play_icon4.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+
+                    } else if (play_icon4.getTag().toString().contains("Stopped4")) {
+                        mediaPlayer.release();
+                        play_icon4.setImageResource(R.drawable.play_icon);
+                        play_icon4.setTag("Not_playing4");
+                    } else if (play_icon4.getTag().toString().contains("Resumed4")) {
+                        mediaPlayer.start();
+                        play_icon4.setTag("Stopped4");
+                        play_icon4.setImageResource(R.drawable.stop);
+                    }
+
+                }else {
+
+                    if (mediaPlayer == null){
+
+                        music = "music4";
+                        play_icon4.setImageResource(R.drawable.stop);
+                        play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon2.setImageResource(R.drawable.play_icon);
+                        play_icon1.setImageResource(R.drawable.play_icon);
+                        mediaPlayer = new MediaPlayer();
+                        try {
+                            mediaPlayer.setDataSource(MainActivity.this, Uri.parse("https://www.ee.columbia.edu/~dpwe/sounds/music/dont_speak-no_doubt.wav"));
+                            mediaPlayer.prepare();
+                            mediaPlayer.start();
+                            play_icon4.setTag("Stopped4");
+                            Toast.makeText(MainActivity.this, "please wait, music is loading", Toast.LENGTH_LONG).show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon4.setTag("Not_playing4");
+                                play_icon4.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+
+                    }else {
+
+                        mediaPlayer.release();
+                        music = "music4";
+                        play_icon4.setImageResource(R.drawable.stop);
+                        play_icon3.setImageResource(R.drawable.play_icon);
+                        play_icon2.setImageResource(R.drawable.play_icon);
+                        play_icon1.setImageResource(R.drawable.play_icon);
+
+                        mediaPlayer = new MediaPlayer();
+                        try {
+                            mediaPlayer.setDataSource(MainActivity.this, Uri.parse("https://www.ee.columbia.edu/~dpwe/sounds/music/dont_speak-no_doubt.wav"));
+                            Toast.makeText(MainActivity.this, "please wait, music is loading", Toast.LENGTH_LONG).show();
+                            mediaPlayer.prepare();
+                            mediaPlayer.start();
+                            play_icon4.setTag("Stopped4");
+
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon4.setTag("Not_playing4");
+                                play_icon4.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+
+        pause4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (play_icon4.getTag().toString().contains("Stopped4")){
+                    mediaPlayer.pause();
+                    play_icon4.setTag("Resumed4");
+                    play_icon4.setImageResource(R.drawable.play_icon);
+                    music = "music4";
                     Toast.makeText(MainActivity.this, "music has paused", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(MainActivity.this, "music is not playing", Toast.LENGTH_SHORT).show();
