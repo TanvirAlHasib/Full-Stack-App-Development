@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView play_icon1, play_icon2, play_icon3,pause1, pause2, pause3;
     MediaPlayer mediaPlayer;
 
+    String music = "music1";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,35 +27,76 @@ public class MainActivity extends AppCompatActivity {
         pause1 = findViewById(R.id.pause1);
         pause2 = findViewById(R.id.pause2);
         pause3 = findViewById(R.id.pause3);
-        
+
+
+
+        // first music section
+
+
+
         play_icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (play_icon1.getTag().toString().contains("Not_playing")){
+                if (music.contains("music1")){
+                    if (play_icon1.getTag().toString().contains("Not_playing")){
 
-                    play_icon1.setImageResource(R.drawable.stop);
-                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
-                    mediaPlayer.start();
-                    play_icon1.setTag("Stopped");
+                        play_icon1.setImageResource(R.drawable.stop);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
+                        mediaPlayer.start();
+                        play_icon1.setTag("Stopped");
 
-                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play_icon1.setImageResource(R.drawable.play_icon);
-                            play_icon1.setTag("Not_playing");
-                        }
-                    });
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon1.setImageResource(R.drawable.play_icon);
+                                play_icon1.setTag("Not_playing");
+                            }
+                        });
 
-                } else if (play_icon1.getTag().toString().contains("Stopped")) {
-                    play_icon1.setImageResource(R.drawable.play_icon);
-                    mediaPlayer.release();
-                    play_icon1.setTag("Not_playing");
-                } else if (play_icon1.getTag().toString().contains("Resumed")) {
-                    mediaPlayer.start();
-                    play_icon1.setTag("Stopped");
-                    play_icon1.setImageResource(R.drawable.stop);
+                    } else if (play_icon1.getTag().toString().contains("Stopped")) {
+                        play_icon1.setImageResource(R.drawable.play_icon);
+                        mediaPlayer.release();
+                        play_icon1.setTag("Not_playing");
+                    } else if (play_icon1.getTag().toString().contains("Resumed")) {
+                        mediaPlayer.start();
+                        play_icon1.setTag("Stopped");
+                        play_icon1.setImageResource(R.drawable.stop);
+                    }
                 }else {
-                    mediaPlayer.release();
+                    if (mediaPlayer != null){
+                        mediaPlayer.release();
+
+                        music = "music1";
+                        play_icon1.setImageResource(R.drawable.stop);
+                        play_icon2.setImageResource(R.drawable.play_icon);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
+                        mediaPlayer.start();
+                        play_icon1.setTag("Stopped");
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon1.setImageResource(R.drawable.play_icon);
+                                play_icon1.setTag("Not_playing");
+                            }
+                        });
+                    }else {
+
+                        music = "music1";
+                        play_icon1.setImageResource(R.drawable.stop);
+                        play_icon2.setImageResource(R.drawable.play_icon);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.moove_ka_busy_day_ahead);
+                        mediaPlayer.start();
+                        play_icon1.setTag("Stopped");
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon1.setImageResource(R.drawable.play_icon);
+                                play_icon1.setTag("Not_playing");
+                            }
+                        });
+                    }
                 }
             }
         });
@@ -66,8 +109,94 @@ public class MainActivity extends AppCompatActivity {
                     play_icon1.setImageResource(R.drawable.play_icon);
                     Toast.makeText(MainActivity.this, "music has paused", Toast.LENGTH_SHORT).show();
                     play_icon1.setTag("Resumed");
+                    music = "music1";
                 }else {
 
+                    Toast.makeText(MainActivity.this, "music is not playing", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
+     // 2nd music section
+
+
+
+        play_icon2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (music.contains("music2")){
+
+                    if (play_icon2.getTag().toString().contains("Not_playing2")){
+
+                        play_icon2.setTag("Stopped2");
+                        play_icon2.setImageResource(R.drawable.stop);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sunny_fruit_beat_blitz);
+                        mediaPlayer.start();
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon2.setTag("Not_playing2");
+                                play_icon2.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+                    } else if (play_icon2.getTag().toString().contains("Stopped2")) {
+                        mediaPlayer.release();
+                        play_icon2.setTag("Not_playing2");
+                        play_icon2.setImageResource(R.drawable.play_icon);
+                    } else if (play_icon2.getTag().toString().contains("Resumed2")) {
+                        mediaPlayer.start();
+                        play_icon2.setTag("Stopped2");
+                        play_icon2.setImageResource(R.drawable.stop);
+                    }
+                }else {
+                    if (mediaPlayer != null){
+                        mediaPlayer.release();
+                        music = "music2";
+                        play_icon2.setTag("Stopped2");
+                        play_icon2.setImageResource(R.drawable.stop);
+                        play_icon1.setImageResource(R.drawable.play_icon);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sunny_fruit_beat_blitz);
+                        mediaPlayer.start();
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon2.setTag("Not_playing2");
+                                play_icon2.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+                    }else {
+                        music = "music2";
+                        play_icon2.setTag("Stopped2");
+                        play_icon2.setImageResource(R.drawable.stop);
+                        play_icon1.setImageResource(R.drawable.play_icon);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sunny_fruit_beat_blitz);
+                        mediaPlayer.start();
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                play_icon2.setTag("Not_playing2");
+                                play_icon2.setImageResource(R.drawable.play_icon);
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+        pause2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (play_icon2.getTag().toString().contains("Stopped2")){
+                    mediaPlayer.pause();
+                    play_icon2.setTag("Resumed2");
+                    play_icon2.setImageResource(R.drawable.play_icon);
+                    music = "music2";
+                }else {
                     Toast.makeText(MainActivity.this, "music is not playing", Toast.LENGTH_SHORT).show();
                 }
             }
