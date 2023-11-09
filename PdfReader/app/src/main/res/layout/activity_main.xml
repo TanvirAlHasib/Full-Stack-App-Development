@@ -6,9 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="3dp"
+    android:padding="1dp"
     android:background="@color/white"
     >
+
+    <TextView
+        android:id="@+id/App_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="বুখারী শরীফ"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:textColor="@color/text_color"
+        android:textStyle="bold"
+        android:background="@color/Teal"
+        android:padding="5dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="1dp"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,28 +41,13 @@
                 android:layout_height="match_parent"
                 >
 
-                <TextView
-                    android:id="@+id/App_heading"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="বুখারী শরীফ"
-                    android:textSize="35sp"
-                    android:gravity="center"
-                    android:textColor="@color/text_color"
-                    android:textStyle="bold"
-                    android:background="@color/Teal"
-                    android:padding="5dp"
-                    android:layout_marginBottom="25dp"
-                    />
-
                 <LinearLayout
                     android:id="@+id/fHadith"
-                    android:layout_below="@id/App_heading"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:orientation="horizontal"
                     android:background="@drawable/bottom_shade"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -99,7 +99,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -152,7 +152,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -205,7 +205,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -258,7 +258,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -311,7 +311,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -363,7 +363,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -416,7 +416,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
@@ -469,7 +469,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
