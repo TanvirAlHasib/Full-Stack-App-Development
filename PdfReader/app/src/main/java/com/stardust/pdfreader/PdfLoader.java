@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.util.FitPolicy;
 
 public class PdfLoader extends AppCompatActivity {
 
@@ -38,6 +39,8 @@ public class PdfLoader extends AppCompatActivity {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if ((networkInfo != null) && (networkInfo.isAvailable())){
 
+            // pdf loading section
+
             pdf_loading.setVisibility(View.VISIBLE);
             pdfView.setVisibility(View.INVISIBLE);
             pdfView.fromUri(Uri.parse(pdf_url))
@@ -48,7 +51,8 @@ public class PdfLoader extends AppCompatActivity {
                             pdfView.setVisibility(View.VISIBLE);
                             Toast.makeText(PdfLoader.this, "বুখারী শরীফ সফলভাবে লোড হয়েছে", Toast.LENGTH_SHORT).show();
                         }
-                    }).load();
+                    }) .pageFitPolicy(FitPolicy.WIDTH)
+                    .load();
 
         }else {
             no_internetAnimation.setVisibility(View.VISIBLE);
