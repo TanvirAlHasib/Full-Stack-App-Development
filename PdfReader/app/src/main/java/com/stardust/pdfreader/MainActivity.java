@@ -165,6 +165,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
 
+        new AlertDialog.Builder(MainActivity.this)
+                .setIcon(R.drawable.exit_alert)
+                .setTitle("প্রস্থান !!")
+                .setMessage("আপনি কি সত্যিই প্রস্থান করতে চান?")
+                .setNegativeButton("হ্যাঁ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).setPositiveButton("না", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
 
+    }
 }
