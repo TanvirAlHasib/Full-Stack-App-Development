@@ -46,13 +46,13 @@ public class PdfLoader extends AppCompatActivity {
                         public void loadComplete(int nbPages) {
                             pdf_loading.setVisibility(View.GONE);
                             pdfView.setVisibility(View.VISIBLE);
-                            Toast.makeText(PdfLoader.this, "pdf loaded successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PdfLoader.this, "বুখারী শরীফ সফলভাবে লোড হয়েছে", Toast.LENGTH_SHORT).show();
                         }
                     }).load();
 
         }else {
             no_internetAnimation.setVisibility(View.VISIBLE);
-            Toast.makeText(PdfLoader.this, "please connect your internet and reload the page", Toast.LENGTH_LONG).show();
+            Toast.makeText(PdfLoader.this, "আপনার ইন্টারনেট সংযোগ করুন এবং পুনরায় লোড করুন", Toast.LENGTH_LONG).show();
         }
 
     }
