@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -57,9 +58,113 @@ public class MainActivity extends AppCompatActivity {
         fHadith.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1zZ5sW3v9KeIX9dk7kAM_AbjVtxA3pHlP/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
 
+        //sHadith section
+
+        sHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1Ce4pN6oYu6TqZbBFY6l-ZuhlE_N4q3R8/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+        //tHadith section
+
+        tHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1lyjM7MPt1BeNk9O4VaPVPcyKcDwlJ9nP/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        fourthHadith section
+
+        fourthHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1xHmWcgcVkx4Phn80gGZF90Q9K2f7s9wP/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        fifthHadith section
+
+        fifthHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1o2zZY2g3ljmhicj-H7PW7ZZVqNn7aQAx/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        sixthHadith section
+
+        sixthHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1anxNLobCW5mu7-2JfAsf50jkg3EDGBaE/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        seventhHadith section
+
+        seventhHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1gdr9x-N090UgcF3wsRf0BVlTTR2rstoJ/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        eightthHadith section
+
+        eightthHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1zHUFTOby8fbeY8kjyVd4DTDM1G8IFWRr/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        ninethHadith section
+
+        ninethHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1Uk6VnnZ5pyU57rrE3hWxXdgSPmiCfl2L/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
+            }
+        });
+
+//        tenthHadith section
+
+        tenthHadith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PdfLoader.pdf_url = "https://drive.google.com/file/d/1lA7LOp0yAgdvZrvdBqzTaBCNzAgOWNQ1/view?usp=drive_link";
+                Intent intent = new Intent(MainActivity.this, PdfLoader.class);
+                startActivity(intent);
             }
         });
 
     }
+
+
+
 }
