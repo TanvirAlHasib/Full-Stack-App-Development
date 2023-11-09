@@ -1,3 +1,5 @@
+import java.net.URL
+
 pluginManagement {
     repositories {
         google()
@@ -10,6 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://jcenter.bintray.com") }
     }
 }
 
