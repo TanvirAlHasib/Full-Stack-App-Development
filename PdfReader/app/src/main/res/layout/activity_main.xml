@@ -522,7 +522,7 @@
                     android:layout_height="80dp"
                     android:background="@drawable/bottom_shade"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     >
 
                     <ImageView
