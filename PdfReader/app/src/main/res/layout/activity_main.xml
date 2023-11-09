@@ -6,9 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:padding="3dp"
+    android:background="@color/white"
     >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/App_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PdfReader"
+                    android:textSize="35sp"
+                    android:gravity="center"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:background="@color/Teal"
+                    android:padding="5dp"
+                    android:layout_marginBottom="25dp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/fHadith"
+                    android:layout_below="@id/App_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    >
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
