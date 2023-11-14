@@ -9,7 +9,77 @@
     android:padding="2dp"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Write a program to display the multiplication table of a given integer"
+            android:padding="3dp"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:background="@color/Hot_Pink"
+            android:layout_marginBottom="2dp"
+            />
+
+        <TextView
+            android:id="@+id/qNumber"
+            android:layout_below="@id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter the number"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:background="@color/Hot_Pink"
+            android:padding="5dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <EditText
+            android:id="@+id/edNumber"
+            android:layout_below="@id/qNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="number"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvDisplay"
+            android:layout_below="@id/edNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_below="@id/tvDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Calculate"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/Hot_Pink"
+            android:layout_marginBottom="2dp"
+            />
+
+    </RelativeLayout>
 
 
 </LinearLayout>
