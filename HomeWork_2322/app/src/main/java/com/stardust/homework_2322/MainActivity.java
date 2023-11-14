@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edNumber;
     TextView tvDisplay;
-    Button bCalculate;
+    Button bCalculate, bReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         edNumber = findViewById(R.id.edNumber);
         tvDisplay = findViewById(R.id.tvDisplay);
         bCalculate = findViewById(R.id.bCalculate);
+        bReset = findViewById(R.id.bReset);
 
         //functional section
 
@@ -69,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
                             }).show();
 
                 }
+            }
+        });
+
+
+        //reset section
+
+
+        bReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvDisplay.setText("");
+                edNumber.setText("");
             }
         });
 

@@ -87,23 +87,23 @@
                     >
 
                     <Button
-                        android:id="@+id/bCalculate"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="23sp"
-                        android:text="Calculate"
-                        android:backgroundTint="@color/Lavender"
-                        android:layout_weight="1"
-                        />
-
-                    <Button
                         android:id="@+id/bReset"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="23sp"
                         android:text="Reset"
+                        android:backgroundTint="@color/Lavender"
+                        android:layout_weight="1"
+                        />
+
+                    <Button
+                        android:id="@+id/bCalculate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="23sp"
+                        android:text="Calculate"
                         android:backgroundTint="@color/Lavender"
                         android:layout_weight="1"
                         />
