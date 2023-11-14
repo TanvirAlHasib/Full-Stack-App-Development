@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                                     dialogInterface.dismiss();
                                 }
                             }).show();
+                    edNumber.setError("Please enter number here");
                 }
             }
         });
