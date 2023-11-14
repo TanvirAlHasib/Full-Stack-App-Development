@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if ((edNumber.getText().toString().length()) > 0){
 
+                    int number = Integer.parseInt(edNumber.getText().toString());
+                    tvDisplay.setText("");
+
+                    for (int i = 1; i <= 10; i++) {
+
+                        tvDisplay.append(number+" x "+i+" = "+(number*i)+"\n");
+
+                    }
                 }else {
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(R.drawable.alert_icon)
