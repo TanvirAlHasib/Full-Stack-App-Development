@@ -2,6 +2,8 @@ package com.stardust.homework_2322;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,11 +54,47 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
+                }else {
+
+                    edNumber.setError("Please enter number here.");
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(R.drawable.app_icon)
+                            .setTitle("Error!!")
+                            .setMessage("Please enter n_th number to calculate.")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
+
                 }
             }
         });
 
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setIcon(R.drawable.exit_alert)
+                .setTitle("Exit!!")
+                .setMessage("Do you really want to exit ?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
 
     }
 }
