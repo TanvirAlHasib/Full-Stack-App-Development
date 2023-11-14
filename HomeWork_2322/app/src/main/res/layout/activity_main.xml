@@ -77,18 +77,39 @@
                     android:layout_marginBottom="10dp"
                     />
 
-                <Button
-                    android:id="@+id/bCalculate"
+                <LinearLayout
                     android:layout_below="@id/tvDisplay"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/black"
-                    android:textSize="23sp"
-                    android:text="Calculate"
-                    android:backgroundTint="@color/Lavender"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
                     android:layout_marginBottom="2dp"
-                    />
+                    >
+
+                    <Button
+                        android:id="@+id/bCalculate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="23sp"
+                        android:text="Calculate"
+                        android:backgroundTint="@color/Lavender"
+                        android:layout_weight="1"
+                        />
+
+                    <Button
+                        android:id="@+id/bReset"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="23sp"
+                        android:text="Reset"
+                        android:backgroundTint="@color/Lavender"
+                        android:layout_weight="1"
+                        />
+
+
+                </LinearLayout>
 
 
             </RelativeLayout>
