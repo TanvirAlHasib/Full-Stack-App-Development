@@ -32,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         bCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edNumber.getText().toString().length() > 0){
+                int is_zero = Integer.parseInt(edNumber.getText().toString());
+                if ((edNumber.getText().toString().length() > 0) && (is_zero != 0)){
 
                    int number = Integer.parseInt(edNumber.getText().toString());
                    long t = 9;
-                   tvDisplay.setText("");
+                   tvDisplay.setText("9");
                    int sum = 0;
                     for (int i = 1; i <= number; i++) {
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         sum += t;
 
                     }
-                    tvDisplay.append("\nn_th terms summation is: "+ sum);
+                    tvDisplay.append("\nn_th terms summation is: "+ (sum +9 ));
 
                 } else {
 
