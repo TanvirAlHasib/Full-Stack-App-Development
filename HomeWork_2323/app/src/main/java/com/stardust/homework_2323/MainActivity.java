@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 if ((edNumber.getText().toString().length() > 0) && (is_zero != 0)){
 
                    int number = Integer.parseInt(edNumber.getText().toString());
-                   long t = 9;
+                   double t = 9;
                    tvDisplay.setText("9");
-                   int sum = 0;
+                   double sum = 0;
                     for (int i = 1; i <= number; i++) {
 
                         if (i == 1){
