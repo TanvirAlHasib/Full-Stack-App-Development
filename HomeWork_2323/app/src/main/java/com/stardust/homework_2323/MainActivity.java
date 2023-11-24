@@ -34,7 +34,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (edNumber.getText().toString().length() > 0){
 
+                   int number = Integer.parseInt(edNumber.getText().toString());
+                   long t = 9;
+                   tvDisplay.setText("");
+                   int sum = 0;
+                    for (int i = 1; i <= number; i++) {
 
+                        if (i == 1){
+                            continue;
+                        }
+
+                        t = (t*10) + 9;
+                        tvDisplay.append(" "+t);
+                        sum += t;
+
+                    }
+                    tvDisplay.append("\nn_th terms summation is: "+ sum);
 
                 } else {
 
@@ -48,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                                     dialogInterface.dismiss();
                                 }
                             }).show();
+
+                    edNumber.setError("Please enter number here");
 
                 }
             }
