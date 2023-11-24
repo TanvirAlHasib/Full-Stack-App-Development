@@ -76,18 +76,44 @@
                     android:layout_marginBottom="10dp"
                     />
 
-                <Button
-                    android:id="@+id/bCalculate"
+                <LinearLayout
                     android:layout_below="@id/tvDisplay"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Calculate"
-                    android:textColor="@color/white"
-                    android:textSize="23sp"
-                    android:backgroundTint="@color/ForestGreen"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="2dp"
-                    />
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+
+                    <Button
+                        android:id="@+id/bReset"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reset"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:backgroundTint="@color/ForestGreen"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:layout_marginRight="1dp"
+                        />
+
+                    <Button
+                        android:id="@+id/bCalculate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Calculate"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:backgroundTint="@color/ForestGreen"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        />
+
+
+                </LinearLayout>
 
 
             </RelativeLayout>
