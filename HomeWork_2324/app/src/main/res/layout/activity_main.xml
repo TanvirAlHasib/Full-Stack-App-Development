@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Write a program to display the n terms of square natural number and their sum."
+        android:background="@drawable/shade"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/TextColor"
+        android:textSize="24sp"
+        android:layout_marginBottom="1dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Input the number of terms"
+                    android:textSize="23sp"
+                    android:textColor="@color/TextColor"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:background="@drawable/shade"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edNumber"
+                    android:layout_below="@id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    android:inputType="number"
+                    android:hint="n terms number"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvDisplay"
+                    android:layout_below="@id/edNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="24sp"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bottom_shade"
+                    android:visibility="gone"
+                    />
+
+                <Button
+                    android:id="@+id/bCalculate"
+                    android:layout_below="@id/tvDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/BackgrounColor"
+                    android:text="Calculate"
+                    android:textColor="@color/TextColor"
+                    android:textSize="24sp"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
