@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
                     double number = Integer.parseInt(edNumber.getText().toString());
                     tvDisplay.setVisibility(View.VISIBLE);
-                    tvDisplay.setText("The square natural upto"+number +"terms are :\n");
+                    tvDisplay.setText("The square natural upto"+number +" terms are :\n\n");
                     double sum = 0;
 
                     for (int i = 1; i <= number; i++) {
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    tvDisplay.append("\nThe Sum of Square Natural Number upto "+number+
-                            "terms: "+sum);
+                    tvDisplay.append("\n\nThe Sum of Square Natural Number upto "+number+
+                            " terms: "+sum);
 
                 } else {
 
