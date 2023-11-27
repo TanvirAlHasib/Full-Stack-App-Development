@@ -89,49 +89,49 @@ public class MainActivity extends AppCompatActivity {
 
                     if (edEmail.getText().toString().length() > 0)
                     {
-                        editor.putString("Email",edName.getText().toString());
+                        editor.putString("Email",edEmail.getText().toString());
                         editor.apply();
                         edEmail.setText(sharedPreferences.getString("Email","null"));
                     }
 
                     if (edRegistration.getText().toString().length() > 0)
                     {
-                        editor.putString("Registration",edName.getText().toString());
+                        editor.putString("Registration",edRegistration.getText().toString());
                         editor.apply();
                         edRegistration.setText(sharedPreferences.getString("Registration","null"));
                     }
 
                     if (edSSC.getText().toString().length() > 0)
                     {
-                        editor.putString("SSC",edName.getText().toString());
+                        editor.putString("SSC",edSSC.getText().toString());
                         editor.apply();
                         edSSC.setText(sharedPreferences.getString("SSC","null"));
                     }
 
                     if (edHSC.getText().toString().length() > 0)
                     {
-                        editor.putString("HSC",edName.getText().toString());
+                        editor.putString("HSC",edHSC.getText().toString());
                         editor.apply();
                         edHSC.setText(sharedPreferences.getString("HSC","null"));
                     }
 
                     if (edBirthDate.getText().toString().length() > 0)
                     {
-                        editor.putString("Birth",edName.getText().toString());
+                        editor.putString("Birth",edBirthDate.getText().toString());
                         editor.apply();
                         edBirthDate.setText(sharedPreferences.getString("Birth","null"));
                     }
 
                     if (edNid.getText().toString().length() > 0)
                     {
-                        editor.putString("NID",edName.getText().toString());
+                        editor.putString("NID",edNid.getText().toString());
                         editor.apply();
                         edNid.setText(sharedPreferences.getString("NID","null"));
                     }
 
                     if (edPassport.getText().toString().length() > 0)
                     {
-                        editor.putString("Passport",edName.getText().toString());
+                        editor.putString("Passport",edPassport.getText().toString());
                         editor.apply();
                         edPassport.setText(sharedPreferences.getString("Passport","null"));
                     }
