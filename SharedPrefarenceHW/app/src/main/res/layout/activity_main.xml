@@ -1,18 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/BackgroundColor"
+    >
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/shape"
+        android:layout_marginBottom="5dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome Onboard!"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/black"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <EditText
+                    android:id="@+id/edName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your full name"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="text"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edEmail"
+                    android:layout_below="@id/edMName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your email"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edFName"
+                    android:layout_below="@id/edName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your father name"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="text"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edMName"
+                    android:layout_below="@id/edFName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your mother name"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="text"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edRegistration"
+                    android:layout_below="@id/edEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your registration number"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="number"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edSSC"
+                    android:layout_below="@id/edRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your ssc roll number"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="number"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edHSC"
+                    android:layout_below="@id/edSSC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your hsc roll number"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="number"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edBirthDate"
+                    android:layout_below="@id/edHSC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your birth date"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="date"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edNid"
+                    android:layout_below="@id/edBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your NID number"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="number"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <EditText
+                    android:id="@+id/edPassport"
+                    android:layout_below="@id/edNid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:hint="Enter your Passport number"
+                    android:gravity="center"
+                    android:textColor="#0C0C0C"
+                    android:inputType="number"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    />
+
+                <LinearLayout
+                    android:layout_below="@id/edPassport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    >
+
+                    <Button
+                        android:id="@+id/bSave"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save/Update"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/MainColor"
+                        />
+
+                    <Button
+                        android:id="@+id/bCopyAll"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Copy All"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/MainColor"
+                        />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
