@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -34,6 +35,34 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+        // main functional work start
+
+        bSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((edName.getText().toString().length()) > 0 ||
+                        (edFName.getText().toString().length()) > 0 ||
+                        (edMName.getText().toString().length()) > 0 ||
+                        (edEmail.getText().toString().length()) > 0 ||
+                        (edRegistration.getText().toString().length()) > 0 ||
+                        (edSSC.getText().toString().length()) > 0 ||
+                        (edHSC.getText().toString().length()) > 0 ||
+                        (edBirthDate.getText().toString().length()) > 0 ||
+                        (edNid.getText().toString().length()) > 0 ||
+                        (edPassport.getText().toString().length()) > 0)
+                {
+
+
+
+
+                } else {
+
+
+
+                }
+            }
+        });
 
 
     }
