@@ -195,43 +195,46 @@
 
             </RelativeLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+                <Button
+                    android:id="@+id/bSave"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save/Update"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/MainColor"
+                    />
+
+                <Button
+                    android:id="@+id/bCopyAll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Copy All"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/MainColor"
+                    />
+
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
 
+
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        >
-
-        <Button
-            android:id="@+id/bSave"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Save/Update"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/MainColor"
-            />
-
-        <Button
-            android:id="@+id/bCopyAll"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Copy All"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/MainColor"
-            />
-
-
-    </LinearLayout>
 
 
 </LinearLayout>
