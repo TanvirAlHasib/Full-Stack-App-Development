@@ -3,12 +3,16 @@ package com.stardust.sharedprefarencehw;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+        // for copy
+
+        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 
         // main functional work start
 
@@ -143,6 +151,86 @@ public class MainActivity extends AppCompatActivity {
                             }).show();
 
                 }
+            }
+        });
+
+
+        // for copy all button
+
+
+        bCopyAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if ((edName.getText().toString().length()) > 0 ||
+                        (edFName.getText().toString().length()) > 0 ||
+                        (edMName.getText().toString().length()) > 0 ||
+                        (edEmail.getText().toString().length()) > 0 ||
+                        (edRegistration.getText().toString().length()) > 0 ||
+                        (edSSC.getText().toString().length()) > 0 ||
+                        (edHSC.getText().toString().length()) > 0 ||
+                        (edBirthDate.getText().toString().length()) > 0 ||
+                        (edNid.getText().toString().length()) > 0 ||
+                        (edPassport.getText().toString().length()) > 0)
+                {
+
+                    if (edName.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("Name", edName.getText().toString());
+                    }
+
+                    if (edFName.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("FatherName", edFName.getText().toString());
+                    }
+
+                    if (edMName.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("MotherName", edMName.getText().toString());
+                    }
+
+                    if (edEmail.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("Email", edEmail.getText().toString());
+                    }
+
+                    if (edRegistration.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("Registration", edRegistration.getText().toString());
+                    }
+
+                    if (edSSC.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("SSC", edSSC.getText().toString());
+                    }
+
+                    if (edHSC.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("HSC", edHSC.getText().toString());
+                    }
+
+                    if (edBirthDate.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("BirthDate", edBirthDate.getText().toString());
+                    }
+
+                    if (edNid.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("NID", edNid.getText().toString());
+                    }
+
+                    if (edPassport.getText().toString().length() > 0)
+                    {
+                        ClipData clipData = ClipData.newPlainText("Passport", edPassport.getText().toString());
+                    }
+
+                } else
+                {
+
+                    Toast.makeText(MainActivity.this, "Here is nothing to copy", Toast.LENGTH_LONG).show();
+
+                }
+
             }
         });
 
