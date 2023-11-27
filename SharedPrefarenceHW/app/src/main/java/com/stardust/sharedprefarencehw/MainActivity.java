@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button bSave, bCopyAll;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    String clipBoard = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,53 +177,59 @@ public class MainActivity extends AppCompatActivity {
 
                     if (edName.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("Name", edName.getText().toString());
+                        clipBoard = clipBoard + "Name: " + edName.getText().toString() + "\n";
                     }
 
                     if (edFName.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("FatherName", edFName.getText().toString());
+                        clipBoard = clipBoard + "FatherName: " + edFName.getText().toString() + "\n";
                     }
 
                     if (edMName.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("MotherName", edMName.getText().toString());
+                        clipBoard = clipBoard + "MotherName: " + edMName.getText().toString() + "\n";
                     }
 
                     if (edEmail.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("Email", edEmail.getText().toString());
+                        clipBoard = clipBoard + "Email: " + edEmail.getText().toString() + "\n";
                     }
 
                     if (edRegistration.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("Registration", edRegistration.getText().toString());
+                        clipBoard = clipBoard + "RegistrationNumber: " + edRegistration.getText().toString() + "\n";
                     }
 
                     if (edSSC.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("SSC", edSSC.getText().toString());
+                        clipBoard = clipBoard + "SSCRoll: " + edSSC.getText().toString() + "\n";
                     }
 
                     if (edHSC.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("HSC", edHSC.getText().toString());
+                        clipBoard = clipBoard + "HSCRoll: " + edHSC.getText().toString() + "\n";
                     }
 
                     if (edBirthDate.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("BirthDate", edBirthDate.getText().toString());
+                        clipBoard = clipBoard + "BirthDate: " + edBirthDate.getText().toString() + "\n";
                     }
 
                     if (edNid.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("NID", edNid.getText().toString());
+                        clipBoard = clipBoard + "NID: " + edNid.getText().toString() + "\n";
                     }
 
                     if (edPassport.getText().toString().length() > 0)
                     {
-                        ClipData clipData = ClipData.newPlainText("Passport", edPassport.getText().toString());
+                        clipBoard = clipBoard + "Passport: " + edPassport.getText().toString();
                     }
+
+                    ClipData clipData = ClipData.newPlainText("Informations", clipBoard);
+                    clipboardManager.setPrimaryClip(clipData);
+
+                    Toast.makeText(MainActivity.this, "Copy done", Toast.LENGTH_SHORT).show();
+
 
                 } else
                 {
