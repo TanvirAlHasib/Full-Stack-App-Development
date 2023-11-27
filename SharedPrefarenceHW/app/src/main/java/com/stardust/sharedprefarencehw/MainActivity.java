@@ -2,6 +2,8 @@ package com.stardust.sharedprefarencehw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -58,7 +60,16 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
 
-
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(R.drawable.app_icon)
+                            .setTitle("Error!!")
+                            .setMessage("Please enter minimum one input to save or update")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
 
                 }
             }
