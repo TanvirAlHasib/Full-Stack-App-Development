@@ -52,9 +52,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="text"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -67,9 +67,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="textEmailAddress"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -82,9 +82,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="text"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -97,9 +97,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="text"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -112,9 +112,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="number"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -127,9 +127,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="number"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -142,9 +142,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="number"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -157,9 +157,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="date"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -172,9 +172,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="number"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
                 <EditText
@@ -187,9 +187,9 @@
                     android:gravity="center"
                     android:textColor="#0C0C0C"
                     android:inputType="number"
-                    android:layout_marginBottom="1dp"
-                    android:background="@color/white"
-                    android:padding="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bottom_shade"
+                    android:padding="12dp"
                     />
 
 
