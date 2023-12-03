@@ -115,10 +115,11 @@
             <ImageView
                 android:id="@+id/homeButton"
                android:layout_width="fill_parent"
-               android:layout_height="55dp"
+               android:layout_height="40dp"
                android:src="@drawable/home_button"
                android:layout_weight="1"
                 android:background="@drawable/shade"
+                android:layout_gravity="center"
                />
 
             <TextView
