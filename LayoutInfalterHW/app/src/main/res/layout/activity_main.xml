@@ -26,6 +26,7 @@
             >
 
            <TextView
+               android:id="@+id/bivagList"
                android:layout_width="fill_parent"
                android:layout_height="55dp"
                android:layout_weight="1"
@@ -37,6 +38,7 @@
                />
 
             <ImageView
+                android:id="@+id/homeButton"
                android:layout_width="fill_parent"
                android:layout_height="55dp"
                android:src="@drawable/home_button"
@@ -45,6 +47,7 @@
                />
 
             <TextView
+                android:id="@+id/aboutSekhHasina"
                android:layout_width="fill_parent"
                android:layout_height="55dp"
                 android:text="শেখ হাসিনা"
