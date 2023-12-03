@@ -21,15 +21,38 @@
             android:orientation="horizontal"
             android:weightSum="3"
             android:layout_alignParentBottom="true"
-            android:background="@color/white"
+            android:background="@drawable/bottom_shade"
+            android:paddingTop="2dp"
             >
 
-           <ImageView
+           <TextView
                android:layout_width="fill_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="55dp"
+               android:layout_weight="1"
+               android:text="বিভাগসমূহ"
+               android:gravity="center"
+               android:textSize="17.7dp"
+               android:textColor="@color/TextColor"
+               android:textStyle="bold"
+               />
+
+            <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="55dp"
                android:src="@drawable/home_button"
                android:layout_weight="1"
-               android:background="@drawable/bottom_shade"
+                android:background="@drawable/shade"
+               />
+
+            <TextView
+               android:layout_width="fill_parent"
+               android:layout_height="55dp"
+                android:text="শেখ হাসিনা"
+               android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/TextColor"
+                android:textSize="17.7dp"
                />
 
 
