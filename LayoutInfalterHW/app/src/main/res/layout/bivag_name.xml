@@ -51,6 +51,21 @@
                        android:layout_marginLeft="20dp"
                        >
 
+                       <ImageView
+                           android:layout_width="match_parent"
+                           android:layout_height="125dp"
+                           android:src="@drawable/chattogram"
+                           android:scaleType="centerCrop"
+                           />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="চট্টগ্রাম"
+                           android:gravity="center"
+                           android:textSize="18sp"
+                           android:textColor="@color/TextColor"
+                           />
 
 
                    </LinearLayout>
@@ -64,7 +79,21 @@
                        android:layout_marginLeft="50dp"
                        >
 
+                       <ImageView
+                           android:layout_width="match_parent"
+                           android:layout_height="125dp"
+                           android:src="@drawable/rajshahi"
+                           android:scaleType="centerCrop"
+                           />
 
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="রাজশাহী"
+                           android:gravity="center"
+                           android:textSize="18sp"
+                           android:textColor="@color/TextColor"
+                           />
 
                    </LinearLayout>
 
@@ -89,7 +118,21 @@
                         android:layout_marginLeft="20dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/khulna"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="খুলনা"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
@@ -102,7 +145,21 @@
                         android:layout_marginLeft="50dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/borishal"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="বরিশাল"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
@@ -128,7 +185,21 @@
                         android:layout_marginLeft="20dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/syhlet"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="সিলেট"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
@@ -141,7 +212,21 @@
                         android:layout_marginLeft="50dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/dhaka"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ঢাকা"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
@@ -166,7 +251,21 @@
                         android:layout_marginLeft="20dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/rangpur"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="রংপুর"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
@@ -179,7 +278,21 @@
                         android:layout_marginLeft="50dp"
                         >
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:src="@drawable/mymanshing"
+                            android:scaleType="centerCrop"
+                            />
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ময়মনসিংহ"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/TextColor"
+                            />
 
                     </LinearLayout>
 
