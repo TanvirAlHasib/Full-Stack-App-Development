@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/BackgrounColor"
     >
 
     <RelativeLayout
@@ -23,12 +22,14 @@
             android:textColor="@color/inBackgroundTextColor"
             android:textSize="23sp"
             android:padding="5dp"
+            android:background="@color/BackgrounColor"
             />
 
         <ScrollView
             android:layout_below="@id/aboutBangladesh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@id/nevigationSection"
             >
 
             <LinearLayout
@@ -89,6 +90,7 @@
         </ScrollView>
 
         <LinearLayout
+            android:id="@+id/nevigationSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
