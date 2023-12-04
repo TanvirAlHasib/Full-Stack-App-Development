@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (motherLayout.getTag().toString().contains("sekh") || motherLayout.getTag().toString().contains("bivag")){
+                    inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.activity_main, motherLayout);
                     motherLayout.setTag("mainActivity");
                 }
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (motherLayout.getTag().toString().contains("mainActivity") || motherLayout.getTag().toString().contains("sekh")){
+                    inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.bivag_name, inflaterLayout);
                     motherLayout.setTag("bivag");
                 }
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (motherLayout.getTag().toString().contains("mainActivity") || motherLayout.getTag().toString().contains("bivag")){
+                    inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.sekh_hasina, inflaterLayout);
                     motherLayout.setTag("sekh");
                 }
