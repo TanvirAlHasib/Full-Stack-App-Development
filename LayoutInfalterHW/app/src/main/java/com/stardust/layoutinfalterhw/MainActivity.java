@@ -54,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
                     inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.bivag_name, inflaterLayout);
                     motherLayout.setTag("bivag");
+                } else {
+
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(R.drawable.app_icon)
+                            .setTitle("Error!!")
+                            .setMessage("You are already in this section")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
+
                 }
             }
         });
@@ -66,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     layoutInflater.inflate(R.layout.sekh_hasina, inflaterLayout);
                     motherLayout.setTag("sekh");
                 } else {
+
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(R.drawable.app_icon)
                             .setTitle("Error!!")
@@ -76,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                                     dialog.dismiss();
                                 }
                             }).show();
+
                 }
             }
         });
