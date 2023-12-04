@@ -2,7 +2,9 @@ package com.stardust.layoutinfalterhw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
                     inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.sekh_hasina, inflaterLayout);
                     motherLayout.setTag("sekh");
+                } else {
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(R.drawable.app_icon)
+                            .setTitle("Error!!")
+                            .setMessage("You are already in this section")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
                 }
             }
         });
