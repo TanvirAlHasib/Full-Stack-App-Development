@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView bivagList, aboutSekhHasina;
     ImageView homeButton;
-    LinearLayout inflaterLayout, motherLayout, tagchecker;
+    LinearLayout inflaterLayout, motherLayout;
     LayoutInflater layoutInflater;
 
     @Override
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         homeButton = findViewById(R.id.homeButton);
         inflaterLayout = findViewById(R.id.inflaterLayout);
         motherLayout = findViewById(R.id.motherLayout);
-        tagchecker = findViewById(R.id.tagchecker);
 
         // LayoutInflater intro
 
@@ -38,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tagchecker.getTag().toString().contains("sekh") || tagchecker.getTag().toString().contains("bivag")){
+                if (motherLayout.getTag().toString().contains("sekh") || motherLayout.getTag().toString().contains("bivag")){
                     inflaterLayout.removeAllViews();
-                    layoutInflater.inflate(R.layout.activity_main, motherLayout);
-                    tagchecker.setTag("mainActivity");
+                    layoutInflater.inflate(R.layout.home, inflaterLayout);
+                    motherLayout.setTag("mainActivity");
                 }
             }
         });
@@ -49,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
         bivagList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tagchecker.getTag().toString().contains("mainActivity") || tagchecker.getTag().toString().contains("sekh")){
+                if (motherLayout.getTag().toString().contains("mainActivity") || motherLayout.getTag().toString().contains("sekh")){
                     inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.bivag_name, inflaterLayout);
-                    tagchecker.setTag("bivag");
+                    motherLayout.setTag("bivag");
                 }
             }
         });
@@ -60,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
         aboutSekhHasina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tagchecker.getTag().toString().contains("mainActivity") || tagchecker.getTag().toString().contains("bivag")){
+                if (motherLayout.getTag().toString().contains("mainActivity") || motherLayout.getTag().toString().contains("bivag")){
                     inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.sekh_hasina, inflaterLayout);
-                    tagchecker.setTag("sekh");
+                    motherLayout.setTag("sekh");
                 }
             }
         });
