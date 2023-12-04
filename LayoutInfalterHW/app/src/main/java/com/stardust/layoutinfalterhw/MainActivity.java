@@ -43,6 +43,19 @@ public class MainActivity extends AppCompatActivity {
                     inflaterLayout.removeAllViews();
                     layoutInflater.inflate(R.layout.home, inflaterLayout);
                     motherLayout.setTag("mainActivity");
+                } else {
+
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setIcon(R.drawable.app_icon)
+                            .setTitle("Error!!")
+                            .setMessage("You are already in this section")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
+
                 }
             }
         });
