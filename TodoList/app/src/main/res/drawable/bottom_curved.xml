@@ -5,25 +5,23 @@
     <item>
         <shape android:shape="rectangle" >
             <solid android:color="@android:color/transparent" />
-            <corners android:radius="0dp" />
+            <corners android:radius="40dp" />
         </shape>
     </item>
     
     
     <item
         android:bottom="5dp"
-        android:left="1dp"
-        android:right="1dp"
         android:top="0dp">
         
         
         <shape android:shape="rectangle" >
             <solid
-                android:color="#FFC107"
+                android:color="@color/BackGroundColor"
                 />
             <corners
-                android:bottomLeftRadius="20dip"
-                android:bottomRightRadius="20dip"
+                android:bottomLeftRadius="40dip"
+                android:bottomRightRadius="40dip"
                 android:topRightRadius="0dip"
                 />
 
@@ -33,7 +31,7 @@
         <shape android:shape="rectangle"  >
              <corners android:radius="0dip" />
              <stroke android:width="0dip" 
-                 android:color="#10000000" />
+                 android:color="@color/BackGroundColor" />
          </shape>
                  
                      
