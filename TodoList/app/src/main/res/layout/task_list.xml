@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:id="@+id/taskContainer"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:background="#00377E"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/taskDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="hello, my name is tanvir al hasib today my task is completing the to do list design"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            />
+
+        <LinearLayout
+            android:layout_below="@id/taskDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_marginTop="5dp"
+            >
+
+            <Button
+                android:id="@+id/edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#006CFF"
+                android:text="EDIT"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#8A1111"
+                android:text="DELETE"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                />
+
+            <Button
+                android:id="@+id/complete"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#057840"
+                android:text="COMPLETE"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>
