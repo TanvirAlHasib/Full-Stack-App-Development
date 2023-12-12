@@ -83,9 +83,10 @@
             android:layout_height="wrap_content"
             android:text="Your Tasks"
             android:gravity="center"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:background="@drawable/border"
             />
 
         <ListView

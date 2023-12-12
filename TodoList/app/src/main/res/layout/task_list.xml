@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="hello, my name is tanvir al hasib today my task is completing the to do list design"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:maxLines="2"
             android:ellipsize="end"
@@ -54,6 +54,8 @@
                 android:text="DELETE"
                 android:textColor="@color/white"
                 android:textSize="17sp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
                 />
 
             <Button
