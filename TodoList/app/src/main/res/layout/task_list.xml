@@ -5,12 +5,13 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:id="@+id/taskContainer"
+    android:background="@color/white"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:background="#00377E"
+        android:background="@drawable/bottom_shade"
         android:padding="8dp"
         >
 
