@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     taskDisplay.setTextColor(Color.parseColor("#46000000"));
+                    taskDisplay.setText((taskDisplay.getText().toString()) + "(Done 📝)");
                     complete.setText("COMPLETED");
                     Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
                 }
