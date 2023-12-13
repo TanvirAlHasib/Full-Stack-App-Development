@@ -18,7 +18,7 @@
         <TextView
             android:id="@+id/taskDisplay"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="hello, my name is tanvir al hasib today my task is completing the to do list design"
             android:textColor="@color/black"
             android:textSize="18sp"
