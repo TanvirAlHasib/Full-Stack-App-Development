@@ -37,7 +37,7 @@ public class Task_input extends AppCompatActivity {
                     MainActivity.hashMap = new HashMap<>();
                     MainActivity.hashMap.put("task",edTask.getText().toString());
                     MainActivity.arrayList.add(MainActivity.hashMap);
-                    Toast.makeText(Task_input.this, "Task has added properly", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Task_input.this, "Task has added successfully", Toast.LENGTH_SHORT).show();
 
                 } else {
 
