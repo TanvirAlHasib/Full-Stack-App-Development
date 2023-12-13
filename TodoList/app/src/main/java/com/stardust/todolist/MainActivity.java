@@ -16,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
+    FloatingActionButton addNewTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         // variable intro
 
         listView = findViewById(R.id.listView);
+        addNewTask = findViewById(R.id.addNewTask);
 
 
         // custom adapter intro to listview
@@ -34,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         // task input activity load
+
+        addNewTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Task_input.class));
+            }
+        });
 
 
 
