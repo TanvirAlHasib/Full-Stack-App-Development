@@ -38,6 +38,8 @@ public class Task_input extends AppCompatActivity {
                     MainActivity.hashMap.put("task",edTask.getText().toString());
                     MainActivity.arrayList.add(MainActivity.hashMap);
                     Toast.makeText(Task_input.this, "Task has added successfully", Toast.LENGTH_SHORT).show();
+                    // clearing input field after input one task
+                    edTask.setText("");
 
                 } else {
 
