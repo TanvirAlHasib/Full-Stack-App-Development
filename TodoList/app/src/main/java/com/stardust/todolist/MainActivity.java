@@ -123,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     arrayList.remove(position);
+                    // notifying list view that data has changed otherwise app will crash
+                    LocalAdapter.this.notifyDataSetChanged();
                     Toast.makeText(MainActivity.this, "One task deleted successfully", Toast.LENGTH_SHORT).show();
                 }
             });
