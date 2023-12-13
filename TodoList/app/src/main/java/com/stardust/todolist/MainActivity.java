@@ -146,5 +146,27 @@ public class MainActivity extends AppCompatActivity {
         startActivity(getIntent());
     }
 
+    // onBackpressed method
 
+
+    @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setIcon(R.drawable.exit_alert)
+                .setTitle("Exit!!")
+                .setMessage("Do you really want to exit ?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+
+    }
 }
