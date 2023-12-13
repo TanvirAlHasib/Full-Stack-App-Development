@@ -3,12 +3,15 @@ package com.stardust.todolist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,9 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        LocalAdapter localAdapter = new LocalAdapter();
 
+        // custom adapter intro to listview
+
+        LocalAdapter localAdapter = new LocalAdapter();
         listView.setAdapter(localAdapter);
+
+
+        // task input activity load
+
 
 
     }

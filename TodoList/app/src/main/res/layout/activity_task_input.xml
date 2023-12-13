@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Task_input">
+    tools:context=".Task_input"
+    android:orientation="vertical"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/inputHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Input your text below"
+            android:padding="10dp"
+            android:textSize="19sp"
+            android:textColor="@color/white"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"
+            />
+
+        <EditText
+            android:id="@+id/edTask"
+            android:layout_below="@id/inputHeading"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:hint="Task"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/inputButton"
+            android:layout_below="@id/inputHeading"
+            android:layout_toRightOf="@id/edTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textSize="18sp"
+            android:backgroundTint="#023A81"
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
