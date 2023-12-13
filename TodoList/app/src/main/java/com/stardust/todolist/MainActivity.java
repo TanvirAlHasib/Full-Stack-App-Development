@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -86,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             // variable declaretion and intro
 
             TextView taskDisplay = myView.findViewById(R.id.taskDisplay);
-            Button edit = myView.findViewById(R.id.edit);
             Button delete = myView.findViewById(R.id.delete);
             Button complete = myView.findViewById(R.id.complete);
 
@@ -106,9 +107,16 @@ public class MainActivity extends AppCompatActivity {
             taskDisplay.setText(task);
 
 
-            // making edit, delete, complete button functional
+            // making delete, complete button functional
 
-
+            complete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    taskDisplay.setTextColor(Color.parseColor("#46000000"));
+                    complete.setText("COMPLETED");
+                    Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
 

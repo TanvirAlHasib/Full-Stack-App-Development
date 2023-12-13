@@ -10,9 +10,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_height="118dp"
         android:background="@drawable/bottom_shade"
-        android:padding="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
         >
 
         <TextView
@@ -22,28 +24,16 @@
             android:text="hello, my name is tanvir al hasib today my task is completing the to do list design"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:maxLines="2"
-            android:ellipsize="end"
             />
 
         <LinearLayout
             android:layout_below="@id/taskDisplay"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="3"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:weightSum="2"
             >
 
-            <Button
-                android:id="@+id/edit"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#006CFF"
-                android:text="EDIT"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                />
 
             <Button
                 android:id="@+id/delete"
