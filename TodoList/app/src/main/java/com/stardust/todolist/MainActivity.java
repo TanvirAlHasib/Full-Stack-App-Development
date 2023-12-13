@@ -13,10 +13,15 @@ import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     FloatingActionButton addNewTask;
+    public static ArrayList< HashMap< String, String > > arrayList = new ArrayList<>();
+    public static HashMap< String, String > hashMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
