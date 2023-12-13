@@ -119,6 +119,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    arrayList.remove(position);
+                    Toast.makeText(MainActivity.this, "One task deleted successfully", Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
 
             return myView;
