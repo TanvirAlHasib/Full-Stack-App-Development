@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -85,8 +86,12 @@ public class MainActivity extends AppCompatActivity {
             // variable declaretion and intro
 
             TextView taskDisplay = myView.findViewById(R.id.taskDisplay);
+            Button edit = myView.findViewById(R.id.edit);
+            Button delete = myView.findViewById(R.id.delete);
+            Button complete = myView.findViewById(R.id.complete);
 
             // hash map decrypt
+
 
             HashMap< String, String > localHashMap = new HashMap<>();
 
@@ -94,9 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
             String task = localHashMap.get("task");
 
+
             // listview default content change
 
+
             taskDisplay.setText(task);
+
+
+            // making edit, delete, complete button functional
+
+
 
 
 
