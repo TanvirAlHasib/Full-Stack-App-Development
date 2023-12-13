@@ -43,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Task_input.class));
-
-                // custom adapter intro to listview
-
-                LocalAdapter localAdapter = new LocalAdapter();
-                listView.setAdapter(localAdapter);
             }
         });
 
@@ -107,6 +102,17 @@ public class MainActivity extends AppCompatActivity {
 
             return myView;
         }
+    }
+
+
+    // refresh main activity when press back button from another activity
+
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
     }
 
 
