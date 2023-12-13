@@ -39,6 +39,7 @@
             android:maxLines="2"
             android:hint="Task"
             android:gravity="center"
+            android:focusable="true"
             />
 
         <Button
