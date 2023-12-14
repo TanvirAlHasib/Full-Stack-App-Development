@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton addNewTask;
     public static ArrayList< HashMap< String, String > > arrayList = new ArrayList<>();
     public static HashMap< String, String > hashMap = new HashMap<>();
+    public static SharedPreferences sharedPreferences;
+    public static SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
