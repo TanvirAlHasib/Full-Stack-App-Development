@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.HashMap;
 
 public class Task_input extends AppCompatActivity {
@@ -26,7 +25,6 @@ public class Task_input extends AppCompatActivity {
         // variable intro
         inputButton = findViewById(R.id.inputButton);
         edTask = findViewById(R.id.edTask);
-
         // inputButton functional
         inputButton.setOnClickListener(new View.OnClickListener() {
             @Override
