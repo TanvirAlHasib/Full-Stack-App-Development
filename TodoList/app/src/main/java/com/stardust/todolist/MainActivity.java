@@ -122,15 +122,19 @@ public class MainActivity extends AppCompatActivity {
                     taskDisplay.setText((taskDisplay.getText().toString()) + " (Done 📝)");
                     complete.setText("COMPLETED");
                     Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
+
                     // sharedPreferences after complete data entry
+
                     sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
                     editor = sharedPreferences.edit();
 
                     // Gson section
+
                     Gson gson = new Gson();
                     String json = gson.toJson(arrayList);
 
                     // sharedPreferences data entry
+
                     editor.putString("arrayList", json);
                     editor.apply();
                 }
