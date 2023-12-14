@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.renderscript.Type;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -155,7 +157,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        // sharedPreferences data retrive section
+//        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("arrayList", "get Nothing");
 
+        // type section
+        Type type = (Type) new TypeToken<ArrayList<HashMap<String, String>>>(){
+        }.getType();
+
+        arrayList = gson.fromJson(json, (java.lang.reflect.Type) type);
 
     }
 
