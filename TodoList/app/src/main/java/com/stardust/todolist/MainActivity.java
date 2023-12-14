@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.renderscript.Type;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -122,6 +122,17 @@ public class MainActivity extends AppCompatActivity {
                     taskDisplay.setText((taskDisplay.getText().toString()) + " (Done 📝)");
                     complete.setText("COMPLETED");
                     Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
+                    // sharedPreferences after complete data entry
+                    sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+                    editor = sharedPreferences.edit();
+
+                    // Gson section
+                    Gson gson = new Gson();
+                    String json = gson.toJson(arrayList);
+
+                    // sharedPreferences data entry
+                    editor.putString("arrayList", json);
+                    editor.apply();
                 }
             });
 
@@ -132,6 +143,17 @@ public class MainActivity extends AppCompatActivity {
                     // notifying list view that data has changed otherwise app will crash
                     LocalAdapter.this.notifyDataSetChanged();
                     Toast.makeText(MainActivity.this, "One task deleted successfully ✌", Toast.LENGTH_SHORT).show();
+                    // sharedPreferences after delete data entry
+                    sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+                    editor = sharedPreferences.edit();
+
+                    // Gson section
+                    Gson gson = new Gson();
+                    String json = gson.toJson(arrayList);
+
+                    // sharedPreferences data entry
+                    editor.putString("arrayList", json);
+                    editor.apply();
                 }
             });
 
@@ -158,12 +180,13 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
         // sharedPreferences data retrive section
-//        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("arrayList", "get Nothing");
+        String json = null;
+        json = sharedPreferences.getString("arrayList", "get Nothing");
 
         // type section
-        Type type = (Type) new TypeToken<ArrayList<HashMap<String, String>>>(){
+        Type type = new TypeToken<ArrayList<HashMap<String, String>>>() {
         }.getType();
 
         arrayList = gson.fromJson(json, (java.lang.reflect.Type) type);
