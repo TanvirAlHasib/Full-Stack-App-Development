@@ -225,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).show();
 
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        editor = sharedPreferences.edit();
         editor.putBoolean("firstRun", false);
         editor.apply();
 
