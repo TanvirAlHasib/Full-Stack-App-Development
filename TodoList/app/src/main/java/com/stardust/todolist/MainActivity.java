@@ -185,6 +185,11 @@ public class MainActivity extends AppCompatActivity {
 
         // sharedPreferences data retrive section
         sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        boolean firstRun = sharedPreferences.getBoolean("firstRun", true);
+
+        if (firstRun) return;
+
+
         Gson gson = new Gson();
         String json = "";
         json = sharedPreferences.getString("arrayList", "");
@@ -192,10 +197,6 @@ public class MainActivity extends AppCompatActivity {
         // type section
         Type type = new TypeToken<ArrayList<HashMap<String, String>>>() {
         }.getType();
-
-        boolean firstRun = sharedPreferences.getBoolean("firstRun", true);
-
-        if (firstRun) return;
 
         arrayList = gson.fromJson(json, (java.lang.reflect.Type) type);
 
