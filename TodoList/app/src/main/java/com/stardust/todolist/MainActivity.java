@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
             String task = localHashMap.get("task");
 
+            if (localHashMap.containsKey("color")) taskDisplay.setTextColor(Color.parseColor("#46000000"));
+            if (localHashMap.containsKey("button")) complete.setText("COMPLETED");
+
 
             // listview default content change
 
@@ -118,9 +121,8 @@ public class MainActivity extends AppCompatActivity {
             complete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // fixing multiple clicking problem by adding condition
 
-                    if (complete.getText().toString().contains("COMPLETE")){
+                    if (complete.getText().toString().length() < 9){
 
                         taskDisplay.setTextColor(Color.parseColor("#46000000"));
                         taskDisplay.setText((taskDisplay.getText().toString()) + " (Done 📝)");
@@ -128,14 +130,13 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
 
                         // sharedPreferences, gson, hashMap and arraylist section
-
+                        hashMap = new HashMap<>();
                         hashMap.put("task", taskDisplay.getText().toString());
+                        hashMap.put("color", "#46000000");
+                        hashMap.put("button", "COMPLETED");
 
                         // using set method to replace data in particular index
                         arrayList.set(position, hashMap);
-
-                        // notifying list view that data has changed otherwise app can crash for this also
-                        LocalAdapter.this.notifyDataSetChanged();
 
                         // sharedPreferences section
                         sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
@@ -149,8 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("arrayList", json);
                         editor.apply();
 
-
-                    } else {
+                    } else{
 
                         Toast.makeText(MainActivity.this, "You have already completed this task ✔", Toast.LENGTH_SHORT).show();
 
