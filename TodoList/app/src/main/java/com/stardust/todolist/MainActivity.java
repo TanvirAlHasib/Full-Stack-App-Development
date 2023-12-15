@@ -127,6 +127,29 @@ public class MainActivity extends AppCompatActivity {
                         complete.setText("COMPLETED");
                         Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
 
+                        // sharedPreferences, gson, hashMap and arraylist section
+
+                        hashMap.put("task", taskDisplay.getText().toString());
+
+                        // using set method to replace data in particular index
+                        arrayList.set(position, hashMap);
+
+                        // notifying list view that data has changed otherwise app can crash for this also
+                        LocalAdapter.this.notifyDataSetChanged();
+
+                        // sharedPreferences section
+                        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+                        editor = sharedPreferences.edit();
+
+                        // Gson section
+                        Gson gson = new Gson();
+                        String json = gson.toJson(arrayList);
+
+                        // sharedPreferences data entry
+                        editor.putString("arrayList", json);
+                        editor.apply();
+
+
                     } else {
 
                         Toast.makeText(MainActivity.this, "You have already completed this task ✔", Toast.LENGTH_SHORT).show();
