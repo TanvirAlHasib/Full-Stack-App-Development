@@ -118,25 +118,20 @@ public class MainActivity extends AppCompatActivity {
             complete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    taskDisplay.setTextColor(Color.parseColor("#46000000"));
-                    taskDisplay.setText((taskDisplay.getText().toString()) + " (Done 📝)");
-                    complete.setText("COMPLETED");
-                    Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
+                    // fixing multiple clicking problem by adding condition
 
-                    // sharedPreferences after complete data entry
+                    if (complete.getText().toString().contains("COMPLETE")){
 
-                    sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
-                    editor = sharedPreferences.edit();
+                        taskDisplay.setTextColor(Color.parseColor("#46000000"));
+                        taskDisplay.setText((taskDisplay.getText().toString()) + " (Done 📝)");
+                        complete.setText("COMPLETED");
+                        Toast.makeText(MainActivity.this, "Yahoo, one task done 🏆", Toast.LENGTH_SHORT).show();
 
-                    // Gson section
+                    } else {
 
-                    Gson gson = new Gson();
-                    String json = gson.toJson(arrayList);
+                        Toast.makeText(MainActivity.this, "You have already completed this task ✔", Toast.LENGTH_SHORT).show();
 
-                    // sharedPreferences data entry
-
-                    editor.putString("arrayList", json);
-                    editor.apply();
+                    }
                 }
             });
 
@@ -250,6 +245,8 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("arrayList", json);
         editor.apply();
 
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        editor = sharedPreferences.edit();
         editor.putBoolean("firstRun", false);
         editor.apply();
 
