@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
         //variable intro
         gridView = findViewById(R.id.gridView);
 
+        //gridView making functional
+        LocalAdaptar localAdaptar = new LocalAdaptar();
+        gridView.setAdapter(localAdaptar);
+
 
     }
 
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 10;
+            return 6;
         }
 
         @Override
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View myView = layoutInflater.inflate(R.layout.grid_view, parent);
+            View myView = layoutInflater.inflate(R.layout.grid_view, parent, false);
 
             return myView;
         }
