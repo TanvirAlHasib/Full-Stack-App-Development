@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
@@ -71,10 +72,17 @@ public class MainActivity extends AppCompatActivity {
 
             // variable intro and declaretion
             TextView menuTitle = myView.findViewById(R.id.menuTitle);
+            ImageView menuIcon = myView.findViewById(R.id.menuIcon);
 
+            // menu name change
+            hashMap = new HashMap<>();
+            hashMap = arrayList.get(position);
             String menu = hashMap.get(""+position);
-
             menuTitle.setText(menu);
+
+            //menu icon change
+            if (hashMap.containsKey("icon")) menuIcon.setImageBitmap(convertStringToBitamp(hashMap.get("icon")));
+
 
             return myView;
         }
@@ -89,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
         hashMap = new HashMap<>();
         hashMap.put("0", "Emergency");
+        String emergencyIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
+        hashMap.put("icon", emergencyIconText);
         arrayList.add(hashMap);
         hashMap.put("1", "Entertain");
         arrayList.add(hashMap);
