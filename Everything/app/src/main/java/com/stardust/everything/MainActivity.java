@@ -29,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //arrayList load function call here
+        arrayLoad();
+
         //variable intro
         gridView = findViewById(R.id.gridView);
 
-        //arrayList load function call here
-        arrayLoad();
 
         //gridView making functional
         LocalAdaptar localAdaptar = new LocalAdaptar();
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return arrayList.size();
+            return 6;
         }
 
         @Override
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             // variable intro and declaretion
             TextView menuTitle = myView.findViewById(R.id.menuTitle);
 
-            String menu = hashMap.get(position);
+            String menu = hashMap.get(""+position);
 
             menuTitle.setText(menu);
 
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         hashMap = new HashMap<>();
         hashMap.put("0", "Emergency");
-        hashMap.put("1", "Entertainment");
+        hashMap.put("1", "Entertain");
         hashMap.put("2", "Task");
         hashMap.put("3", "Quotes");
         hashMap.put("4", "News");
