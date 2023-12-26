@@ -3,13 +3,17 @@ package com.stardust.everything;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -74,11 +78,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void arrayLoad(){
 
-
+        hashMap = new HashMap<>();
 
     }
 
 
     // arrayList and hashmap load function end here
+
+
+    // convert bitmap to base64 text start here
+
+
+    public String convertBitmapToString(Bitmap bmp) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream); //compress to which format you want.
+        byte[] byte_arr = stream.toByteArray();
+        String imageStr = Base64.encodeToString(byte_arr, 1);
+        return imageStr;
+    }
+
+
+    // convert bitmap to base64 text end here
+
+
+    // decode base64 to image end
+
+
+
+
+
+    // decode base64 to image end
+
 
 }
