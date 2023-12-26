@@ -71,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
             // variable intro and declaretion
             TextView menuTitle = myView.findViewById(R.id.menuTitle);
 
+            String menu = hashMap.get(position);
+
+            menuTitle.setText(menu);
+
             return myView;
         }
     }
