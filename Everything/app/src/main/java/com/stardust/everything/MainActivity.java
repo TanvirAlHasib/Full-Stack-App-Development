@@ -97,22 +97,32 @@ public class MainActivity extends AppCompatActivity {
 
         hashMap = new HashMap<>();
         hashMap.put("0", "Emergency");
-        String emergencyIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
+        String emergencyIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.emergency_icon));
         hashMap.put("icon", emergencyIconText);
         arrayList.add(hashMap);
         hashMap = new HashMap<>();
         hashMap.put("1", "Entertain");
+        String entertainIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(),R.drawable.entertain));
+        hashMap.put("icon", entertainIconText);
         arrayList.add(hashMap);
         hashMap = new HashMap<>();
         hashMap.put("2", "Task");
+        String taskIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.task));
+        hashMap.put("icon", taskIconText);
         arrayList.add(hashMap);
         hashMap = new HashMap<>();
         hashMap.put("3", "Quotes");
+        String quoteIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.quote));
+        hashMap.put("icon", quoteIconText);
         arrayList.add(hashMap);
         hashMap = new HashMap<>();
         hashMap.put("4", "News");
+        String newsIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.news));
+        hashMap.put("icon", newsIconText);
         arrayList.add(hashMap);
         hashMap = new HashMap<>();
+        String memeIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(),R.drawable.meme));
+        hashMap.put("icon", memeIconText);
         hashMap.put("5", "Memes");
         arrayList.add(hashMap);
 
