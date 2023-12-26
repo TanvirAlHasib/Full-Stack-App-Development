@@ -10,9 +10,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     GridView gridView;
+    ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+    HashMap<String, String> hashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         //variable intro
         gridView = findViewById(R.id.gridView);
+
+        //arrayList load function call here
+        arrayLoad();
 
         //gridView making functional
         LocalAdaptar localAdaptar = new LocalAdaptar();
@@ -60,5 +68,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //initialize end here
+
+    // arrayList and hashmap load function start here
+
+
+    public void arrayLoad(){
+
+
+
+    }
+
+
+    // arrayList and hashmap load function end here
 
 }
