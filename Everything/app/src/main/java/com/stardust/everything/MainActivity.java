@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.media.Image;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -104,7 +104,13 @@ public class MainActivity extends AppCompatActivity {
     // decode base64 to image end
 
 
+    public Bitmap convertStringToBitamp(String imageStr){
 
+        byte[] imageAsBytes = Base64.decode(imageStr.getBytes(), Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+        return bitmap;
+
+    }
 
 
     // decode base64 to image end
