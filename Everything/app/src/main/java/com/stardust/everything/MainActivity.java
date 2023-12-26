@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 6;
+            return arrayList.size();
         }
 
         @Override
@@ -79,6 +80,13 @@ public class MainActivity extends AppCompatActivity {
     public void arrayLoad(){
 
         hashMap = new HashMap<>();
+        hashMap.put("0", "Emergency");
+        hashMap.put("1", "Entertainment");
+        hashMap.put("2", "Task");
+        hashMap.put("3", "Quotes");
+        hashMap.put("4", "News");
+        hashMap.put("5", "Memes");
+        arrayList.add(hashMap);
 
     }
 
