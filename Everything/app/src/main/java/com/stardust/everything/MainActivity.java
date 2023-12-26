@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View myView = layoutInflater.inflate(R.layout.grid_view, parent, false);
 
+            // variable intro and declaretion
+            TextView menuTitle = myView.findViewById(R.id.menuTitle);
+
             return myView;
         }
     }
