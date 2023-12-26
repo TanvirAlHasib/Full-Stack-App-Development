@@ -100,14 +100,19 @@ public class MainActivity extends AppCompatActivity {
         String emergencyIconText = convertBitmapToString(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
         hashMap.put("icon", emergencyIconText);
         arrayList.add(hashMap);
+        hashMap = new HashMap<>();
         hashMap.put("1", "Entertain");
         arrayList.add(hashMap);
+        hashMap = new HashMap<>();
         hashMap.put("2", "Task");
         arrayList.add(hashMap);
+        hashMap = new HashMap<>();
         hashMap.put("3", "Quotes");
         arrayList.add(hashMap);
+        hashMap = new HashMap<>();
         hashMap.put("4", "News");
         arrayList.add(hashMap);
+        hashMap = new HashMap<>();
         hashMap.put("5", "Memes");
         arrayList.add(hashMap);
 
