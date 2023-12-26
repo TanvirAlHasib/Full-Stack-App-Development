@@ -17,30 +17,27 @@
         >
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:cardCornerRadius="80dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="65dp"
             app:cardBackgroundColor="@color/white"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="3dp"
-            android:id="@+id/profile"
             android:layout_gravity="center"
-            android:background="@color/white"
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:cardCornerRadius="80dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                app:cardCornerRadius="65dp"
                 android:layout_gravity="center">
 
                 <ImageView
                     android:id="@+id/menuIcon"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/emergency_icon"
-                    android:padding="5dp"
                     />
 
             </androidx.cardview.widget.CardView>
@@ -55,10 +52,6 @@
             android:text="Emergency"
             android:textColor="@color/black"
             android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:paddingTop="0dp"
             android:textSize="20sp"
             />
 
