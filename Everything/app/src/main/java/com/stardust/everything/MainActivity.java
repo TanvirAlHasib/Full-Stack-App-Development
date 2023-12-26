@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 6;
+            return arrayList.size();
         }
 
         @Override
@@ -89,10 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
         hashMap = new HashMap<>();
         hashMap.put("0", "Emergency");
+        arrayList.add(hashMap);
         hashMap.put("1", "Entertain");
+        arrayList.add(hashMap);
         hashMap.put("2", "Task");
+        arrayList.add(hashMap);
         hashMap.put("3", "Quotes");
+        arrayList.add(hashMap);
         hashMap.put("4", "News");
+        arrayList.add(hashMap);
         hashMap.put("5", "Memes");
         arrayList.add(hashMap);
 
