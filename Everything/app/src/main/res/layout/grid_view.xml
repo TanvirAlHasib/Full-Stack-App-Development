@@ -36,6 +36,7 @@
                     android:id="@+id/menuIcon"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
+                    android:padding="10dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/emergency_icon"
                     />
