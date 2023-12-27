@@ -9,23 +9,45 @@
     android:padding="10dp"
     >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your Emergency contacts"
-        android:textSize="20sp"
-        android:padding="10dp"
-        android:gravity="center"
-        android:background="@color/BackgroundColor"
-        android:textColor="@color/white"
-        android:layout_marginBottom="15dp"
-        />
-
-    <ListView
-        android:id="@+id/listView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        >
+
+        <TextView
+            android:id="@+id/allContactsHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Emergency contacts"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@color/BackgroundColor"
+            android:textColor="@color/white"
+            android:layout_marginBottom="15dp"
+            />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_below="@id/allContactsHeading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/emergencyFloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/add_icon"
+            />
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
