@@ -3,6 +3,7 @@ package com.stardust.everything;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -91,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this, "position number"+position, Toast.LENGTH_SHORT).show();
+                    if (position == 0){
+
+                        startActivity(new Intent(MainActivity.this, Emergency.class));
+
+                    }
                 }
             });
 
