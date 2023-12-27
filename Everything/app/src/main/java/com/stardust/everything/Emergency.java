@@ -10,9 +10,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Emergency extends AppCompatActivity {
 
     ListView listView;
+    HashMap<String, String> hashMap = new HashMap<>();
+    ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
