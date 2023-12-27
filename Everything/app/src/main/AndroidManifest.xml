@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Everything"
         tools:targetApi="31">
         <activity
+            android:name=".Emergency"
+            android:exported="false"
+            android:label="@string/title_activity_emergency"
+            android:theme="@style/Theme.Everything" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

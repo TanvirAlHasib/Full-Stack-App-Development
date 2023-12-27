@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             // variable intro and declaretion
             TextView menuTitle = myView.findViewById(R.id.menuTitle);
             ImageView menuIcon = myView.findViewById(R.id.menuIcon);
+            LinearLayout gridViewXml = myView.findViewById(R.id.gridViewXml);
 
             // menu name change
             hashMap = new HashMap<>();
@@ -82,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
             //menu icon change
             if (hashMap.containsKey("icon")) menuIcon.setImageBitmap(convertStringToBitamp(hashMap.get("icon")));
+
+            //onClick listener
+            gridViewXml.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "position number"+position, Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
             return myView;
