@@ -2,7 +2,126 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@drawable/shade"
     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:cardCornerRadius="65dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_margin="5dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                app:cardCornerRadius="65dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/profile"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/eName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Tanvir Al Hasib"
+                android:padding="3dp"
+                android:textSize="18sp"
+                android:gravity="start"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/eDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="He is a student"
+                android:paddingLeft="8dp"
+                android:textSize="15sp"
+                android:gravity="start"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/eNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="01521746069"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <Button
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="message"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:backgroundTint="@color/BackgroundColor"
+            android:layout_weight="1"
+            android:layout_marginRight="1dp"
+            />
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="call"
+            android:backgroundTint="@color/BackgroundColor"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
