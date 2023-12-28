@@ -30,7 +30,8 @@ public class Emergency extends AppCompatActivity {
     RelativeLayout emergencyContactMotherLayout;
     ImageView contactImage;
     EditText contactName;
-    EditText contactEmail;
+    EditText contactDescription;
+    EditText contactNumber;
     Button saveContact;
 
 
@@ -47,7 +48,8 @@ public class Emergency extends AppCompatActivity {
         //input section's item's intro
         contactImage = findViewById(R.id.contactImage);
         contactName = findViewById(R.id.contactName);
-        contactEmail = findViewById(R.id.contactEmail);
+        contactDescription = findViewById(R.id.contactDescription);
+        contactNumber = findViewById(R.id.contactNumber);
         saveContact = findViewById(R.id.saveContact);
 
 

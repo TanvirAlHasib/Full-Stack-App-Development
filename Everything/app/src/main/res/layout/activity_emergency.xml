@@ -110,21 +110,34 @@
             />
 
         <EditText
-            android:id="@+id/contactEmail"
+            android:id="@+id/contactDescription"
             android:layout_below="@id/contactName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter contact's email"
+            android:hint="Enter contact's description"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_marginBottom="35dp"
-            android:inputType="textEmailAddress"
+            android:inputType="textMultiLine"
+            />
+
+        <EditText
+            android:id="@+id/contactNumber"
+            android:layout_below="@id/contactDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter contact's number"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="35dp"
+            android:inputType="phone"
             />
 
         <Button
             android:id="@+id/saveContact"
-            android:layout_below="@id/contactEmail"
+            android:layout_below="@id/contactNumber"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
