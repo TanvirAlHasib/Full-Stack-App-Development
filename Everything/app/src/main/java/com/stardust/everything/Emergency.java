@@ -62,7 +62,6 @@ public class Emergency extends AppCompatActivity {
         //code for emergency floating action button
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
-        forNullContacts.setVisibility(View.GONE);
         emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,8 +187,6 @@ public class Emergency extends AppCompatActivity {
     public void onBackPressed() {
 
         if (emergencyContactMotherLayout.getTag().toString().contains("visible")) super.onBackPressed();
-
-
 
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
