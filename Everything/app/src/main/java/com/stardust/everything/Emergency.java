@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,6 +20,7 @@ public class Emergency extends AppCompatActivity {
     ListView listView;
     HashMap<String, String> hashMap = new HashMap<>();
     ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+    FloatingActionButton emergencyFloatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class Emergency extends AppCompatActivity {
 
         // variable intro
         listView = findViewById(R.id.listView);
+        emergencyFloatingButton = findViewById(R.id.emergencyFloatingButton);
 
         //listView initialize
         ListLocalAdapter listLocalAdapter = new ListLocalAdapter();
