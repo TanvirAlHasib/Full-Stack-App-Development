@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -25,6 +28,11 @@ public class Emergency extends AppCompatActivity {
     FloatingActionButton emergencyFloatingButton;
     RelativeLayout emergencyInputSection;
     RelativeLayout emergencyContactMotherLayout;
+    ImageView contactImage;
+    EditText contactName;
+    EditText contactEmail;
+    Button saveContact;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,11 @@ public class Emergency extends AppCompatActivity {
         emergencyFloatingButton = findViewById(R.id.emergencyFloatingButton);
         emergencyInputSection = findViewById(R.id.emergencyInputSection);
         emergencyContactMotherLayout = findViewById(R.id.emergencyContactMotherLayout);
+        //input section's item's intro
+        contactImage = findViewById(R.id.contactImage);
+        contactName = findViewById(R.id.contactName);
+        contactEmail = findViewById(R.id.contactEmail);
+        saveContact = findViewById(R.id.saveContact);
 
 
 
@@ -46,10 +59,14 @@ public class Emergency extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //design functioning here
                 emergencyContactMotherLayout.setVisibility(View.GONE);
                 emergencyContactMotherLayout.setTag("gone");
                 emergencyInputSection.setVisibility(View.VISIBLE);
                 emergencyFloatingButton.setVisibility(View.GONE);
+
+                //code for making emergency contact input xml dynamic
+
 
             }
         });
@@ -98,8 +115,9 @@ public class Emergency extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
+
         if (emergencyContactMotherLayout.getTag().toString().contains("visible")) super.onBackPressed();
+
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
         emergencyFloatingButton.setVisibility(View.VISIBLE);
