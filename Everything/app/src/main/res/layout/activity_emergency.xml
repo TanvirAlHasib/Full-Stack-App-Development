@@ -29,7 +29,7 @@
             />
 
         <TextView
-            android:id="@+id/forNull"
+            android:id="@+id/forNullContacts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Your emergency contacts will be here 📞"

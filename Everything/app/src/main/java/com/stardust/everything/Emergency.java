@@ -36,6 +36,7 @@ public class Emergency extends AppCompatActivity {
     EditText contactDescription;
     EditText contactNumber;
     Button saveContact;
+    TextView forNullContacts;
 
 
     @Override
@@ -54,12 +55,14 @@ public class Emergency extends AppCompatActivity {
         contactDescription = findViewById(R.id.contactDescription);
         contactNumber = findViewById(R.id.contactNumber);
         saveContact = findViewById(R.id.saveContact);
+        forNullContacts = findViewById(R.id.forNullContacts);
 
 
 
         //code for emergency floating action button
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
+        forNullContacts.setVisibility(View.GONE);
         emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +89,8 @@ public class Emergency extends AppCompatActivity {
                             contactName.setText("");
                             contactDescription.setText("");
                             contactImage.setImageResource(R.drawable.capture);
+                            forNullContacts.setVisibility(View.GONE);
+
 
                         } else {
 
@@ -113,6 +118,12 @@ public class Emergency extends AppCompatActivity {
         //listView initialize
         ListLocalAdapter listLocalAdapter = new ListLocalAdapter();
         listView.setAdapter(listLocalAdapter);
+
+        if (arrayList.size() == 0){
+
+            forNullContacts.setVisibility(View.VISIBLE);
+
+        }
 
 
     }
@@ -177,6 +188,8 @@ public class Emergency extends AppCompatActivity {
     public void onBackPressed() {
 
         if (emergencyContactMotherLayout.getTag().toString().contains("visible")) super.onBackPressed();
+
+
 
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
