@@ -3,12 +3,14 @@ package com.stardust.everything;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -21,6 +23,8 @@ public class Emergency extends AppCompatActivity {
     HashMap<String, String> hashMap = new HashMap<>();
     ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
     FloatingActionButton emergencyFloatingButton;
+    RelativeLayout emergencyInputSection;
+    RelativeLayout emergencyContactMotherLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,27 @@ public class Emergency extends AppCompatActivity {
         // variable intro
         listView = findViewById(R.id.listView);
         emergencyFloatingButton = findViewById(R.id.emergencyFloatingButton);
+        emergencyInputSection = findViewById(R.id.emergencyInputSection);
+        emergencyContactMotherLayout = findViewById(R.id.emergencyContactMotherLayout);
+
+
+
+        //code for emergency floating action button
+        emergencyContactMotherLayout.setVisibility(View.VISIBLE);
+        emergencyInputSection.setVisibility(View.GONE);
+        emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                emergencyContactMotherLayout.setVisibility(View.GONE);
+                emergencyContactMotherLayout.setTag("gone");
+                emergencyInputSection.setVisibility(View.VISIBLE);
+                emergencyFloatingButton.setVisibility(View.GONE);
+
+            }
+        });
+
+
 
         //listView initialize
         ListLocalAdapter listLocalAdapter = new ListLocalAdapter();
@@ -68,5 +93,17 @@ public class Emergency extends AppCompatActivity {
         }
     }
 
+    // on back press
 
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        if (emergencyContactMotherLayout.getTag().toString().contains("visible")) super.onBackPressed();
+        emergencyContactMotherLayout.setVisibility(View.VISIBLE);
+        emergencyInputSection.setVisibility(View.GONE);
+        emergencyFloatingButton.setVisibility(View.VISIBLE);
+        emergencyContactMotherLayout.setTag("visible");
+
+    }
 }
