@@ -12,6 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         >
 
         <TextView
@@ -44,6 +45,93 @@
             android:layout_marginRight="25dp"
             android:layout_marginBottom="30dp"
             android:src="@drawable/add_icon"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/emergencyContactInputHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please enter your emergency contact's information below"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/BackgroundColor"
+            android:layout_marginBottom="35dp"
+            />
+
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_below="@id/emergencyContactInputHeading"
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/capture"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/imageHeading"
+            android:layout_below="@id/contactImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your profile picture"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:background="@color/BackgroundColor"
+            android:layout_marginBottom="35dp"
+            />
+
+        <EditText
+            android:id="@+id/contactName"
+            android:layout_below="@id/imageHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter contact's name"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:maxLines="2"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="35dp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/contactEmail"
+            android:layout_below="@id/contactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter contact's email"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="35dp"
+            android:inputType="textEmailAddress"
+            />
+
+        <Button
+            android:id="@+id/saveContact"
+            android:layout_below="@id/contactEmail"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/BackgroundColor"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:gravity="center"
             />
 
 
