@@ -82,6 +82,10 @@ public class Emergency extends AppCompatActivity {
                             hashMap.put("des", contactDescription.getText().toString());
                             hashMap.put("number", contactNumber.getText().toString());
                             arrayList.add(hashMap);
+                            contactNumber.setText("");
+                            contactName.setText("");
+                            contactDescription.setText("");
+                            contactImage.setImageResource(R.drawable.capture);
 
                         } else {
 
