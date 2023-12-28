@@ -68,7 +68,22 @@ public class Emergency extends AppCompatActivity {
                 emergencyFloatingButton.setVisibility(View.GONE);
 
                 //code for making emergency contact input xml dynamic
+                saveContact.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
+                        if (contactName.getText().toString().length() > 0 && contactNumber.getText().toString().length() > 0){
+
+                            hashMap = new HashMap<>();
+                            hashMap.put("name", contactName.getText().toString());
+                            hashMap.put("des", contactDescription.getText().toString());
+                            hashMap.put("number", contactNumber.getText().toString());
+                            arrayList.add(hashMap);
+
+                        }
+
+                    }
+                });
 
             }
         });
@@ -88,7 +103,7 @@ public class Emergency extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 10;
+            return arrayList.size();
         }
 
         @Override
