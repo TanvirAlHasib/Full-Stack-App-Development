@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -122,6 +123,13 @@ public class Emergency extends AppCompatActivity {
             //layout inflate
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View emergencyView = layoutInflater.inflate(R.layout.list_view, parent, false);
+
+            //list view variables intro and declaretion
+            TextView eName = emergencyView.findViewById(R.id.eName);
+            TextView eDescription = emergencyView.findViewById(R.id.eDescription);
+            TextView eNumber = emergencyView.findViewById(R.id.eNumber);
+            ImageView eProfile = emergencyView.findViewById(R.id.eProfile);
+
 
             return emergencyView;
         }
