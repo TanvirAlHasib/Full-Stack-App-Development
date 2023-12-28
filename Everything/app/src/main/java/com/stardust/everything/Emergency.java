@@ -2,7 +2,9 @@ package com.stardust.everything;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -81,6 +83,19 @@ public class Emergency extends AppCompatActivity {
                             hashMap.put("number", contactNumber.getText().toString());
                             arrayList.add(hashMap);
 
+                        } else {
+
+                            new AlertDialog.Builder(Emergency.this)
+                                    .setIcon(R.drawable.alert)
+                                    .setTitle("Error !!")
+                                    .setMessage("Please enter number and name of contact ☎")
+                                    .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    }).create().show();
+
                         }
 
                     }
@@ -129,6 +144,22 @@ public class Emergency extends AppCompatActivity {
             TextView eDescription = emergencyView.findViewById(R.id.eDescription);
             TextView eNumber = emergencyView.findViewById(R.id.eNumber);
             ImageView eProfile = emergencyView.findViewById(R.id.eProfile);
+
+            //getting value from array list and insert in contact informations
+            hashMap = new HashMap<>();
+            hashMap = arrayList.get(position);
+            eName.setText(""+hashMap.get("name"));
+            if (hashMap.containsKey("des")){
+
+                eDescription.setText(""+hashMap.get("des"));
+
+            } else {
+
+                eDescription.setText("null");
+
+            }
+
+            eNumber.setText(""+hashMap.get("number"));
 
 
             return emergencyView;
