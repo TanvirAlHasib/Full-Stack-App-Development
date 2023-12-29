@@ -7,8 +7,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +26,7 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -80,6 +85,19 @@ public class Emergency extends AppCompatActivity {
                 emergencyFloatingButton.setVisibility(View.GONE);
                 allContactsHeading.setTag("gone");
 
+                // for picking image from external storage or gallery
+                contactImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //implicit intent
+                        Intent contact_image = new Intent(Intent.ACTION_PICK);
+                        contact_image.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        startActivityForResult(contact_image,1);
+
+                    }
+                });
+
                 //code for making emergency contact input xml dynamic
                 saveContact.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -90,18 +108,10 @@ public class Emergency extends AppCompatActivity {
                             hashMap = new HashMap<>();
                             hashMap.put("name", contactName.getText().toString());
 
-                            // for picking image from external storage or gallery
-                            contactImage.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    //implicit intent
-                                    Intent contact_image = new Intent(Intent.ACTION_PICK);
-                                    contact_image.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                                    startActivityForResult(contact_image,1);
-
-                                }
-                            });
+                            //taking image from contactImage and storing in hashmap
+                            BitmapDrawable drawable = (BitmapDrawable) contactImage.getDrawable();
+                            Bitmap bitmap = drawable.getBitmap();
+                            hashMap.put("image",convertBitmapToString(bitmap));
 
 
                             if (contactDescription.getText().toString().length() > 0){
@@ -199,6 +209,8 @@ public class Emergency extends AppCompatActivity {
 
             eNumber.setText(""+hashMap.get("number"));
 
+            eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
+
 
             return emergencyView;
         }
@@ -239,6 +251,35 @@ public class Emergency extends AppCompatActivity {
 
         }
 
+    }
+
+    // convert bitmap to base64 text start here
+
+
+    public String convertBitmapToString(Bitmap bmp) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream); //compress to which format you want.
+        byte[] byte_arr = stream.toByteArray();
+        String imageStr = Base64.encodeToString(byte_arr, 1);
+        return imageStr;
+    }
+
+
+    // convert bitmap to base64 text end here
+
+
+    // decode base64 to image end
+
+
+    public Bitmap convertStringToBitamp(String imageStr){
+
+        byte[] imageAsBytes = Base64.decode(imageStr.getBytes(), Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+        return bitmap;
 
     }
+
+
+    // decode base64 to image end
+
 }
