@@ -1,5 +1,6 @@
 package com.stardust.everything;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -216,6 +217,28 @@ public class Emergency extends AppCompatActivity {
         emergencyFloatingButton.setVisibility(View.VISIBLE);
         emergencyContactMotherLayout.setTag("visible");
         allContactsHeading.setTag("visible");
+
+    }
+
+    // for result of implicit intent
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //checking if result ok or not
+        if (resultCode == RESULT_OK){
+
+            //checking if we got the same code or not, that is 1, we have given in implicit intent
+            if (requestCode == 1){
+
+                contactImage.setImageURI(data.getData());
+
+            }
+
+        }
+
 
     }
 }
