@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -104,6 +105,8 @@ public class Emergency extends AppCompatActivity {
                     public void onClick(View v) {
 
                         if (contactName.getText().toString().length() > 0 && contactNumber.getText().toString().length() > 0){
+
+                            Toast.makeText(Emergency.this, "please wait 😊", Toast.LENGTH_SHORT).show();
 
                             hashMap = new HashMap<>();
                             hashMap.put("name", contactName.getText().toString());
@@ -211,6 +214,7 @@ public class Emergency extends AppCompatActivity {
 
             eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
 
+            Toast.makeText(Emergency.this, "done 🏁", Toast.LENGTH_SHORT).show();
 
             return emergencyView;
         }
@@ -247,7 +251,14 @@ public class Emergency extends AppCompatActivity {
 
                 contactImage.setImageURI(data.getData());
 
+            } else {
+
+                Toast.makeText(this, "something went wrong", Toast.LENGTH_SHORT).show();
             }
+
+        } else {
+
+            Toast.makeText(this, "Image is not available", Toast.LENGTH_SHORT).show();
 
         }
 
