@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,8 @@ public class Emergency extends AppCompatActivity {
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
         allContactsHeading.setTag("visible");
+
+        //emergency floating button on click listener
         emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +88,21 @@ public class Emergency extends AppCompatActivity {
 
                             hashMap = new HashMap<>();
                             hashMap.put("name", contactName.getText().toString());
+
+                            // for picking image from external storage or gallery
+                            contactImage.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    //implicit intent
+                                    Intent contact_image = new Intent(Intent.ACTION_PICK);
+                                    contact_image.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                    startActivityForResult(contact_image,1);
+
+                                }
+                            });
+
+
                             if (contactDescription.getText().toString().length() > 0){
 
                                 hashMap.put("des", contactDescription.getText().toString());
