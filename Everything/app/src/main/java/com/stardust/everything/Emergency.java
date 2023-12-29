@@ -85,7 +85,15 @@ public class Emergency extends AppCompatActivity {
 
                             hashMap = new HashMap<>();
                             hashMap.put("name", contactName.getText().toString());
-                            hashMap.put("des", contactDescription.getText().toString());
+                            if (contactDescription.getText().toString().length() > 0){
+
+                                hashMap.put("des", contactDescription.getText().toString());
+
+                            } else {
+
+                                hashMap.put("des", "No descriptions are available ☹");
+                            }
+
                             hashMap.put("number", contactNumber.getText().toString());
                             arrayList.add(hashMap);
                             contactNumber.setText("");
@@ -167,15 +175,8 @@ public class Emergency extends AppCompatActivity {
             hashMap = new HashMap<>();
             hashMap = arrayList.get(position);
             eName.setText(""+hashMap.get("name"));
-            if (hashMap.containsKey("des")){
 
-                eDescription.setText(""+hashMap.get("des"));
-
-            } else {
-
-                eDescription.setText("null");
-
-            }
+            eDescription.setText(""+hashMap.get("des"));
 
             eNumber.setText(""+hashMap.get("number"));
 
