@@ -37,6 +37,7 @@ public class Emergency extends AppCompatActivity {
     EditText contactNumber;
     Button saveContact;
     TextView forNullContacts;
+    TextView allContactsHeading;
 
 
     @Override
@@ -49,6 +50,7 @@ public class Emergency extends AppCompatActivity {
         emergencyFloatingButton = findViewById(R.id.emergencyFloatingButton);
         emergencyInputSection = findViewById(R.id.emergencyInputSection);
         emergencyContactMotherLayout = findViewById(R.id.emergencyContactMotherLayout);
+        allContactsHeading = findViewById(R.id.allContactsHeading);
         //input section's item's intro
         contactImage = findViewById(R.id.contactImage);
         contactName = findViewById(R.id.contactName);
@@ -62,6 +64,7 @@ public class Emergency extends AppCompatActivity {
         //code for emergency floating action button
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
+        allContactsHeading.setTag("visible");
         emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +74,7 @@ public class Emergency extends AppCompatActivity {
                 emergencyContactMotherLayout.setTag("gone");
                 emergencyInputSection.setVisibility(View.VISIBLE);
                 emergencyFloatingButton.setVisibility(View.GONE);
+                allContactsHeading.setTag("gone");
 
                 //code for making emergency contact input xml dynamic
                 saveContact.setOnClickListener(new View.OnClickListener() {
@@ -186,12 +190,13 @@ public class Emergency extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        if (emergencyContactMotherLayout.getTag().toString().contains("visible")) super.onBackPressed();
+        if (allContactsHeading.getTag().toString().contains("visible")) super.onBackPressed();
 
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
         emergencyFloatingButton.setVisibility(View.VISIBLE);
         emergencyContactMotherLayout.setTag("visible");
+        allContactsHeading.setTag("visible");
 
     }
 }
