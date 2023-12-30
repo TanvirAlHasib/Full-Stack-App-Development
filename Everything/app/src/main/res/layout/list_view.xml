@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:paddingBottom="1dp"
+        android:paddingBottom="5dp"
         >
 
         <Button
