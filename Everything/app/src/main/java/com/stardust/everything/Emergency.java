@@ -339,7 +339,7 @@ public class Emergency extends AppCompatActivity {
     }
 
 
-    //if i have not the to call then this code will run for taking permission by pop up
+    //Handle Permission Result for both call and message
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -353,6 +353,17 @@ public class Emergency extends AppCompatActivity {
                 Toast.makeText(this, "Call permission denied", Toast.LENGTH_SHORT).show();
             }
         }
+
+        if (requestCode == REQUEST_SMS_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, proceed with sending the message.
+                sendMessage();
+            } else {
+                // Permission denied, show a message or handle accordingly.
+                Toast.makeText(this, "SMS permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 
 
