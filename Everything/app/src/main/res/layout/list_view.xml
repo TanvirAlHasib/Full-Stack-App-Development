@@ -83,6 +83,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:padding="5dp"
+                android:textColor="#056C0A"
                 />
 
 
