@@ -51,7 +51,9 @@ public class Emergency extends AppCompatActivity {
     Button saveContact;
     TextView forNullContacts;
     TextView allContactsHeading;
-    private static final int REQUEST_CALL_PERMISSION = 1;
+    private static final int REQUEST_CALL_PERMISSION = 2;
+    private static final int REQUEST_SMS_PERMISSION = 2;
+
 
     String contact_Number;
 
@@ -256,6 +258,25 @@ public class Emergency extends AppCompatActivity {
                         // Permission already granted, proceed with the call.
                         makeCall();
                     }
+
+                }
+            });
+
+
+            // for message the contact
+            message.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //checking if i have the permission for message or not
+                    if (ActivityCompat.checkSelfPermission(Emergency.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                        // Permission not granted, request it.
+                        ActivityCompat.requestPermissions(Emergency.this, new String[]{Manifest.permission.SEND_SMS}, REQUEST_SMS_PERMISSION);
+                    } else {
+                        // Permission already granted, proceed with sending the message.
+                        sendMessage();
+                    }
+
 
                 }
             });
