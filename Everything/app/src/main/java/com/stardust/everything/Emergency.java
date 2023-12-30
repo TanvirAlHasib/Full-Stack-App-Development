@@ -17,6 +17,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.telephony.SmsManager;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -336,7 +337,22 @@ public class Emergency extends AppCompatActivity {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:" + contact_Number));
         startActivity(callIntent);
+        Toast.makeText(this, "calling to "+contact_Number, Toast.LENGTH_SHORT).show();
     }
+
+
+    // for making message
+    private void sendMessage() {
+        // Your code to send the message goes here.
+        String phoneNumber = contact_Number; // contact number from list view.
+        String message = "Hello, this is an emergency message. I am in trouble, please help me";
+
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+
+        Toast.makeText(this, "Message sent to " + contact_Number, Toast.LENGTH_SHORT).show();
+    }
+
 
 
     //Handle Permission Result for both call and message
