@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -203,6 +204,8 @@ public class Emergency extends AppCompatActivity {
             TextView eNumber = emergencyView.findViewById(R.id.eNumber);
             ImageView eProfile = emergencyView.findViewById(R.id.eProfile);
             Button delete = emergencyView.findViewById(R.id.delete);
+            Button call = emergencyView.findViewById(R.id.call);
+            Button message = emergencyView.findViewById(R.id.message);
 
             //getting value from array list and insert in contact informations
             hashMap = new HashMap<>();
@@ -228,6 +231,19 @@ public class Emergency extends AppCompatActivity {
 
                 }
             });
+
+
+            //for call the contact
+            call.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    startActivity(intent.setData(Uri.parse("tel:"+eNumber.getText().toString())));
+
+                }
+            });
+
 
 
             return emergencyView;
