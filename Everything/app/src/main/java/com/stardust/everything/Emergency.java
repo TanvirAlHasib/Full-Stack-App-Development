@@ -1,12 +1,16 @@
 package com.stardust.everything;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.app.AlertDialog;
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -47,6 +51,10 @@ public class Emergency extends AppCompatActivity {
     Button saveContact;
     TextView forNullContacts;
     TextView allContactsHeading;
+    private static final int REQUEST_CALL_PERMISSION = 1;
+
+    String contact_Number;
+
 
 
     @Override
@@ -216,6 +224,8 @@ public class Emergency extends AppCompatActivity {
 
             eNumber.setText(""+hashMap.get("number"));
 
+            contact_Number = hashMap.get("number");
+
             eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
 
             Toast.makeText(Emergency.this, "done 🏁", Toast.LENGTH_SHORT).show();
@@ -238,8 +248,14 @@ public class Emergency extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(Intent.ACTION_CALL);
-                    startActivity(intent.setData(Uri.parse("tel:"+eNumber.getText().toString())));
+                    //checking the permission, if i have the permission to call or not
+                    if (ActivityCompat.checkSelfPermission(Emergency.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // Permission not granted, request it.
+                        ActivityCompat.requestPermissions(Emergency.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL_PERMISSION);
+                    } else {
+                        // Permission already granted, proceed with the call.
+                        makeCall();
+                    }
 
                 }
             });
@@ -267,8 +283,6 @@ public class Emergency extends AppCompatActivity {
     }
 
     // for result of implicit intent
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -293,6 +307,34 @@ public class Emergency extends AppCompatActivity {
         }
 
     }
+
+
+    // for making call
+    private void makeCall() {
+        // Your code to make the call goes here.
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + contact_Number));
+        startActivity(callIntent);
+    }
+
+
+    //if i have not the to call then this code will run for taking permission by pop up
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_CALL_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, proceed with the call.
+                makeCall();
+            } else {
+                // Permission denied, show a message or handle accordingly.
+                Toast.makeText(this, "Call permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
 
     // convert bitmap to base64 text start here
 
