@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
 import android.Manifest;
@@ -14,6 +15,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -53,7 +57,11 @@ public class Emergency extends AppCompatActivity {
     TextView forNullContacts;
     TextView allContactsHeading;
     private static final int REQUEST_CALL_PERMISSION = 2;
-    private static final int REQUEST_SMS_PERMISSION = 2;
+    private static final int REQUEST_SMS_PERMISSION = 3;
+    private static final int REQUEST_LOCATION_PERMISSION = 4;
+
+    private LocationManager locationManager;
+    private LocationListener locationListener;
 
 
     String contact_Number;
@@ -168,6 +176,28 @@ public class Emergency extends AppCompatActivity {
             }
         });
 
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        // Set up the location listener
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                // This method is called when the location changes.
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+            }
+        };
+
 
 
         //listView initialize
@@ -269,13 +299,14 @@ public class Emergency extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    //checking if i have the permission for message or not
-                    if (ActivityCompat.checkSelfPermission(Emergency.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-                        // Permission not granted, request it.
-                        ActivityCompat.requestPermissions(Emergency.this, new String[]{Manifest.permission.SEND_SMS}, REQUEST_SMS_PERMISSION);
+                    //checking if i have the permission for location or not
+                    if (ContextCompat.checkSelfPermission(Emergency.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(Emergency.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
+
                     } else {
+
                         // Permission already granted, proceed with sending the message.
-                        sendMessage();
+                        getLocationAndSendMessage();
                     }
 
 
@@ -342,16 +373,60 @@ public class Emergency extends AppCompatActivity {
 
 
     // for making message
-    private void sendMessage() {
+    private void sendMessage(String m) {
         // Your code to send the message goes here.
         String phoneNumber = contact_Number; // contact number from list view.
-        String message = "Hello, this is an emergency message. I am in trouble, please help me";
+        String message = "Hello, this is an emergency message. I am in trouble, please help me. My location is:"+m;
 
         SmsManager smsManager = SmsManager.getDefault();
         smsManager.sendTextMessage(phoneNumber, null, message, null, null);
 
         Toast.makeText(this, "Message sent to " + contact_Number, Toast.LENGTH_SHORT).show();
     }
+
+
+    private void getLocationAndSendMessage() {
+        // Check if the location permission is granted
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            // Check if location services are enabled
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                // Location services are not enabled
+                Toast.makeText(this, "Please enable GPS for accurate location", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Request location updates
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
+            // Get the last known location
+            Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            if (lastKnownLocation != null) {
+                // Format the location information
+                String locationMessage = "Latitude: " + lastKnownLocation.getLatitude() + "\nLongitude: " + lastKnownLocation.getLongitude();
+
+                // Check and request SMS permission
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, REQUEST_SMS_PERMISSION);
+                } else {
+                    // SMS permission already granted, proceed with sending the message.
+                    sendMessage(locationMessage);
+                }
+            } else {
+                // No last known location available yet. Display a message to the user or retry.
+                Toast.makeText(this, "Location information not available yet. Please try again.", Toast.LENGTH_SHORT).show();
+                sendMessage(" null");
+            }
+
+            // Stop listening for location updates
+            locationManager.removeUpdates(locationListener);
+        } else {
+            // Handle the case where location permission is not granted.
+            Toast.makeText(this, "Location permission not granted", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 
 
@@ -373,10 +448,20 @@ public class Emergency extends AppCompatActivity {
         if (requestCode == REQUEST_SMS_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted, proceed with sending the message.
-                sendMessage();
+                Toast.makeText(this, "sms permission granted", Toast.LENGTH_SHORT).show();
             } else {
                 // Permission denied, show a message or handle accordingly.
                 Toast.makeText(this, "SMS permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if (requestCode == REQUEST_LOCATION_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Location permission granted, proceed with getting the location.
+                getLocationAndSendMessage();
+            } else {
+                // Location permission denied, show a message or handle accordingly.
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
             }
         }
 
