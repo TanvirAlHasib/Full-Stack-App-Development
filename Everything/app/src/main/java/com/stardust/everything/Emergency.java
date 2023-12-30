@@ -202,6 +202,7 @@ public class Emergency extends AppCompatActivity {
             TextView eDescription = emergencyView.findViewById(R.id.eDescription);
             TextView eNumber = emergencyView.findViewById(R.id.eNumber);
             ImageView eProfile = emergencyView.findViewById(R.id.eProfile);
+            Button delete = emergencyView.findViewById(R.id.delete);
 
             //getting value from array list and insert in contact informations
             hashMap = new HashMap<>();
@@ -215,6 +216,19 @@ public class Emergency extends AppCompatActivity {
             eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
 
             Toast.makeText(Emergency.this, "done 🏁", Toast.LENGTH_SHORT).show();
+
+            //for deleting contact
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    arrayList.remove(position);
+                    // for notifying that data has changed otherwise it app will crush
+                    notifyDataSetChanged();
+
+                }
+            });
+
 
             return emergencyView;
         }
