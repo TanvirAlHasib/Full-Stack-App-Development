@@ -416,7 +416,6 @@ public class Emergency extends AppCompatActivity {
             } else {
                 // No last known location available yet. Display a message to the user or retry.
                 Toast.makeText(this, "Location information not available yet. Please try again.", Toast.LENGTH_SHORT).show();
-                sendMessage(" null");
             }
 
             // Stop listening for location updates
