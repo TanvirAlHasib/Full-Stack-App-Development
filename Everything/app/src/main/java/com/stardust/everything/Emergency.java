@@ -442,10 +442,7 @@ public class Emergency extends AppCompatActivity {
 
                                 if (addresses != null) {
                                     // Format the location information
-                                    String locationMessage = "Latitude: " + addresses.get(0).getLatitude() + "\nLongitude: " + addresses.get(0).getLongitude()
-                                            + "\nCity: " +addresses.get(0).getAddressLine(0) + "\nCountry: " + addresses.get(0).getCountryName()
-                                            + "\nCountry code: " + addresses.get(0).getCountryCode() + "\nPost code: " + addresses.get(0).getPostalCode()
-                                            + "\nAdmin area: " + addresses.get(0).getAdminArea();
+                                    String locationMessage = "Latitude: " + addresses.get(0).getLatitude() + "\nLongitude: " + addresses.get(0).getLongitude();
 
                                     // Check and request SMS permission
                                     if (ContextCompat.checkSelfPermission(Emergency.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
