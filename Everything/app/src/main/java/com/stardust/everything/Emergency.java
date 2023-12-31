@@ -42,9 +42,12 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,15 +104,22 @@ public class Emergency extends AppCompatActivity {
         emergencyInputSection.setVisibility(View.GONE);
         allContactsHeading.setTag("visible");
 
-        //shared preferences
-        if (arrayList.size() != 0){
+        //getting data from sharedPreferences
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
 
-            sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
+        //Gson section string to arrayList
+        Gson gson = new Gson();
+        String json = "";
+        json = sharedPreferences.getString("arrayList", "");
 
-            //Gson section string to arrayList
+        // type section
+        Type type = new TypeToken<ArrayList<HashMap<String, String>>>() {
+        }.getType();
 
+        arrayList = gson.fromJson(json, (java.lang.reflect.Type) type);
 
-
+        if (arrayList.size() > 0){
+            forNullContacts.setVisibility(View.GONE);
         }
 
 
@@ -172,6 +182,18 @@ public class Emergency extends AppCompatActivity {
                             contactDescription.setText("");
                             contactImage.setImageResource(R.drawable.capture);
                             forNullContacts.setVisibility(View.GONE);
+
+                            // sharedPreferences after adding data entry
+                            sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+                            editor = sharedPreferences.edit();
+
+                            // Gson section
+                            Gson gson = new Gson();
+                            String json = gson.toJson(arrayList);
+
+                            // sharedPreferences data entry
+                            editor.putString("arrayList", json);
+                            editor.apply();
 
 
                         } else {
@@ -258,8 +280,6 @@ public class Emergency extends AppCompatActivity {
 
             eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
 
-            Toast.makeText(Emergency.this, "done 🏁", Toast.LENGTH_SHORT).show();
-
             //for deleting contact
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -268,6 +288,24 @@ public class Emergency extends AppCompatActivity {
                     arrayList.remove(position);
                     // for notifying that data has changed otherwise it app will crush
                     ListLocalAdapter.this.notifyDataSetChanged();
+
+                    // sharedPreferences after delete data entry
+                    sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+                    editor = sharedPreferences.edit();
+
+                    // Gson section
+                    Gson gson = new Gson();
+                    String json = gson.toJson(arrayList);
+
+                    // sharedPreferences data entry
+                    editor.putString("arrayList", json);
+                    editor.apply();
+
+                    if (arrayList.size() == 0){
+
+                        forNullContacts.setVisibility(View.VISIBLE);
+
+                    }
 
                 }
             });
