@@ -15,6 +15,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -35,11 +37,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 public class Emergency extends AppCompatActivity {
 
@@ -60,8 +68,7 @@ public class Emergency extends AppCompatActivity {
     private static final int REQUEST_SMS_PERMISSION = 3;
     private static final int REQUEST_LOCATION_PERMISSION = 4;
 
-    private LocationManager locationManager;
-    private LocationListener locationListener;
+    FusedLocationProviderClient fusedLocationProviderClient;
 
 
     String contact_Number;
@@ -175,28 +182,6 @@ public class Emergency extends AppCompatActivity {
 
             }
         });
-
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        // Set up the location listener
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                // This method is called when the location changes.
-            }
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-            }
-        };
 
 
 
@@ -376,7 +361,7 @@ public class Emergency extends AppCompatActivity {
     private void sendMessage(String m) {
         // Your code to send the message goes here.
         String phoneNumber = contact_Number; // contact number from list view.
-        String message = "Hello, this is an emergency message. I am in trouble, please help me. My location is:"+m;
+        String message = "Hello, this is an emergency message. I am in trouble, please help me. My location is,\n"+m;
 
         SmsManager smsManager = SmsManager.getDefault();
         smsManager.sendTextMessage(phoneNumber, null, message, null, null);
@@ -396,30 +381,40 @@ public class Emergency extends AppCompatActivity {
                 return;
             }
 
-            // Request location updates
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+            fusedLocationProviderClient.getLastLocation()
+                    .addOnSuccessListener(new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            Geocoder geocoder = new Geocoder(Emergency.this, Locale.getDefault());
+                            try {
+                                List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
 
-            // Get the last known location
-            Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                                if (addresses != null) {
+                                    // Format the location information
+                                    String locationMessage = "Latitude: " + addresses.get(0).getLatitude() + "\nLongitude: " + addresses.get(0).getLongitude()
+                                            + "\nCity: " +addresses.get(0).getAddressLine(0) + "\nCountry: " + addresses.get(0).getCountryName()
+                                            + "\nCountry code: " + addresses.get(0).getCountryCode() + "\nPost code: " + addresses.get(0).getPostalCode()
+                                            + "\nAdmin area: " + addresses.get(0).getAdminArea();
 
-            if (lastKnownLocation != null) {
-                // Format the location information
-                String locationMessage = "Latitude: " + lastKnownLocation.getLatitude() + "\nLongitude: " + lastKnownLocation.getLongitude();
+                                    // Check and request SMS permission
+                                    if (ContextCompat.checkSelfPermission(Emergency.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                                        ActivityCompat.requestPermissions(Emergency.this, new String[]{Manifest.permission.SEND_SMS}, REQUEST_SMS_PERMISSION);
+                                    } else {
+                                        // SMS permission already granted, proceed with sending the message.
+                                        sendMessage(locationMessage);
+                                    }
+                                } else {
+                                    // No last known location available yet. Display a message to the user or retry.
+                                    Toast.makeText(Emergency.this, "Location information not available yet. Please try again.", Toast.LENGTH_SHORT).show();
+                                }
 
-                // Check and request SMS permission
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, REQUEST_SMS_PERMISSION);
-                } else {
-                    // SMS permission already granted, proceed with sending the message.
-                    sendMessage(locationMessage);
-                }
-            } else {
-                // No last known location available yet. Display a message to the user or retry.
-                Toast.makeText(this, "Location information not available yet. Please try again.", Toast.LENGTH_SHORT).show();
-            }
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    });
 
-            // Stop listening for location updates
-            locationManager.removeUpdates(locationListener);
         } else {
             // Handle the case where location permission is not granted.
             Toast.makeText(this, "Location permission not granted", Toast.LENGTH_SHORT).show();
