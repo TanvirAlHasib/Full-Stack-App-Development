@@ -11,6 +11,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -67,11 +68,10 @@ public class Emergency extends AppCompatActivity {
     private static final int REQUEST_CALL_PERMISSION = 2;
     private static final int REQUEST_SMS_PERMISSION = 3;
     private static final int REQUEST_LOCATION_PERMISSION = 4;
-
     FusedLocationProviderClient fusedLocationProviderClient;
-
-
     String contact_Number;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
 
 
@@ -100,6 +100,18 @@ public class Emergency extends AppCompatActivity {
         emergencyContactMotherLayout.setVisibility(View.VISIBLE);
         emergencyInputSection.setVisibility(View.GONE);
         allContactsHeading.setTag("visible");
+
+        //shared preferences
+        if (arrayList.size() != 0){
+
+            sharedPreferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
+
+            //Gson section string to arrayList
+
+
+
+        }
+
 
         //emergency floating button on click listener
         emergencyFloatingButton.setOnClickListener(new View.OnClickListener() {
@@ -255,7 +267,7 @@ public class Emergency extends AppCompatActivity {
 
                     arrayList.remove(position);
                     // for notifying that data has changed otherwise it app will crush
-                    notifyDataSetChanged();
+                    ListLocalAdapter.this.notifyDataSetChanged();
 
                 }
             });
