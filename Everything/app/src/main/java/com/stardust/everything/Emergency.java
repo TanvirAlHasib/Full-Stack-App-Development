@@ -276,8 +276,6 @@ public class Emergency extends AppCompatActivity {
 
             eNumber.setText(""+hashMap.get("number"));
 
-            contact_Number = hashMap.get("number");
-
             eProfile.setImageBitmap(convertStringToBitamp(hashMap.get("image")));
 
             //for deleting contact
@@ -316,6 +314,11 @@ public class Emergency extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+                    // getting the contact number
+                    hashMap = new HashMap<>();
+                    hashMap = arrayList.get(position);
+                    contact_Number = hashMap.get("number");
+
                     //checking the permission, if i have the permission to call or not
                     if (ActivityCompat.checkSelfPermission(Emergency.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         // Permission not granted, request it.
@@ -333,6 +336,11 @@ public class Emergency extends AppCompatActivity {
             message.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    //getting the contact number
+                    hashMap = new HashMap<>();
+                    hashMap = arrayList.get(position);
+                    contact_Number = hashMap.get("number");
 
                     //checking if i have the permission for location or not
                     if (ContextCompat.checkSelfPermission(Emergency.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
