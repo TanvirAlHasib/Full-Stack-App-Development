@@ -350,6 +350,7 @@ public class Emergency extends AppCompatActivity {
 
                         // Permission already granted, proceed with sending the message.
                         getLocationAndSendMessage();
+
                     }
 
 
