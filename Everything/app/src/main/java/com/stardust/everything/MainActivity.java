@@ -91,8 +91,13 @@ public class MainActivity extends AppCompatActivity {
             gridViewXml.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "position number"+position, Toast.LENGTH_SHORT).show();
                     if (position == 0){
+
+                        if (Emergency.arrayList.size() > 0){
+
+                            Toast.makeText(MainActivity.this, "Please wait, data is loading", Toast.LENGTH_SHORT).show();
+
+                        }
 
                         startActivity(new Intent(MainActivity.this, Emergency.class));
 

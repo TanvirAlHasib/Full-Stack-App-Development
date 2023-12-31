@@ -57,7 +57,7 @@ public class Emergency extends AppCompatActivity {
 
     ListView listView;
     HashMap<String, String> hashMap = new HashMap<>();
-    ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+    public static ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
     FloatingActionButton emergencyFloatingButton;
     RelativeLayout emergencyInputSection;
     RelativeLayout emergencyContactMotherLayout;
